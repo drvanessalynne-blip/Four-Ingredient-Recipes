@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Summer Bites — 50 Easy Summer Meals</title>
+<meta name="description" content="50 summer recipes, 4 ingredients or fewer, under 600 calories. Like or skip to build your menu.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #fdf6e8;
+    --bg-warm: #f7ecd4;
+    --card: #ffffff;
+    --ink: #2c2117;
+    --ink-soft: #6b5c4e;
+    --ink-faint: #a89a89;
+    --line: #ecdfc6;
+    --coral: #e07856;
+    --coral-dark: #c25e3e;
+    --sage: #6b8e5f;
+    --sage-dark: #557548;
+    --rose: #c17070;
+    --rose-dark: #a55656;
+    --sun: #f4c753;
+    --shadow: 0 6px 24px rgba(78, 52, 22, 0.10), 0 2px 6px rgba(78, 52, 22, 0.06);
+    --shadow-lift: 0 12px 32px rgba(78, 52, 22, 0.15), 0 4px 10px rgba(78, 52, 22, 0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Nunito", system-ui, sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+  }
+
+  body {
+    background-image:
+      radial-gradient(circle at 10% 0%, rgba(244, 199, 83, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 90% 20%, rgba(224, 120, 86, 0.10) 0%, transparent 50%),
+      radial-gradient(circle at 50% 100%, rgba(107, 142, 95, 0.08) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  /* ---------- HEADER ---------- */
+  header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .sun-icon {
+    font-size: 2.2rem;
+    display: inline-block;
+    animation: spin 18s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(2.4rem, 7vw, 3.8rem);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin: 0.5rem 0 0.75rem;
+    color: var(--ink);
+  }
+
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--coral);
+  }
+
+  .tagline {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .meta-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    flex-wrap: wrap;
+  }
+
+  .progress-pill {
+    background: var(--bg-warm);
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-weight: 600;
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+
+  .reset-btn {
+    background: transparent;
+    border: none;
+    color: var(--ink-faint);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    transition: color 0.2s;
+  }
+
+  .reset-btn:hover { color: var(--rose-dark); }
+
+  /* ---------- CARD ---------- */
+  .card {
+    background: var(--card);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--sun) 0%, var(--coral) 50%, var(--sage) 100%);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .recipe-name {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.75rem;
+  }
+
+  .badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+  }
+
+  .badge {
+    background: var(--bg-warm);
+    color: var(--ink);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .badge.cal { background: #fdf0d8; color: #8a6520; }
+  .badge.ing { background: #e7f0e2; color: #3f5d33; }
+
+  .section {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-label {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--coral);
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+    display: block;
+  }
+
+  .ingredients {
+    list-style: none;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .ingredients li {
+    padding: 0.6rem 0.85rem;
+    background: var(--bg);
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    font-size: 0.97rem;
+    color: var(--ink);
+    position: relative;
+    padding-left: 2.1rem;
+  }
+
+  .ingredients li::before {
+    content: "";
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--coral);
+  }
+
+  .instructions {
+    font-size: 1rem;
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  /* ---------- ACTIONS ---------- */
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.7rem;
+    margin-top: 1.75rem;
+  }
+
+  .btn {
+    padding: 0.9rem 0.8rem;
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.2s, background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .btn:active {
+    transform: translateY(0);
+  }
+
+  .btn-like {
+    background: var(--sage);
+    color: white;
+  }
+  .btn-like:hover { background: var(--sage-dark); }
+
+  .btn-skip {
+    background: var(--card);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .btn-skip:hover { background: var(--bg-warm); }
+
+  .btn-dislike {
+    background: var(--rose);
+    color: white;
+  }
+  .btn-dislike:hover { background: var(--rose-dark); }
+
+  /* ---------- LISTS ---------- */
+  .lists {
+    margin-top: 3rem;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 1rem;
+  }
+
+  .tab {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .tab.active {
+    color: var(--ink);
+    border-bottom-color: var(--coral);
+  }
+
+  .tab-count {
+    background: var(--bg-warm);
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    margin-left: 0.3rem;
+  }
+
+  .list-panel {
+    display: none;
+  }
+  .list-panel.active {
+    display: block;
+  }
+
+  .rated-list {
+    list-style: none;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .rated-list li {
+    padding: 0.7rem 1rem;
+    background: var(--card);
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.15s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .rated-list li:hover {
+    background: var(--bg-warm);
+    transform: translateX(3px);
+  }
+
+  .rated-list li .cal-text {
+    color: var(--ink-faint);
+    font-size: 0.82rem;
+  }
+
+  .empty-state {
+    color: var(--ink-faint);
+    font-style: italic;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 540px) {
+    .wrap { padding: 1.5rem 1rem 3rem; }
+    .card { padding: 1.5rem 1.25rem; }
+    .actions { grid-template-columns: 1fr; }
+    .btn { padding: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <span class="sun-icon" aria-hidden="true">☀️</span>
+    <h1>Summer <em>Bites</em></h1>
+    <p class="tagline">50 fresh meals. Four ingredients or fewer. All under 600 calories.</p>
+    <div class="meta-bar">
+      <span class="progress-pill" id="progress">0 of 50 tried</span>
+      <button class="reset-btn" id="resetBtn">Reset all ratings</button>
+    </div>
+  </header>
+
+  <main class="card" id="recipeCard">
+    <!-- Recipe content injected here -->
+  </main>
+
+  <div class="actions">
+    <button class="btn btn-dislike" id="dislikeBtn">👎 Not for me</button>
+    <button class="btn btn-skip" id="skipBtn">🔀 Skip</button>
+    <button class="btn btn-like" id="likeBtn">👍 Yum</button>
+  </div>
+
+  <section class="lists">
+    <div class="tabs">
+      <button class="tab active" data-tab="liked">
+        ♥ Liked <span class="tab-count" id="likedCount">0</span>
+      </button>
+      <button class="tab" data-tab="disliked">
+        ✕ Passed <span class="tab-count" id="dislikedCount">0</span>
+      </button>
+    </div>
+    <div class="list-panel active" id="likedPanel">
+      <ul class="rated-list" id="likedList"></ul>
+    </div>
+    <div class="list-panel" id="dislikedPanel">
+      <ul class="rated-list" id="dislikedList"></ul>
+    </div>
+  </section>
+
+  <footer>
+    Made with sunshine ☀️ · Click any rated recipe to view it again
+  </footer>
+
+</div>
+
+<script>
+// ============================================================
+//  50 SUMMER RECIPES — all ≤ 4 ingredients, all < 600 calories
+// ============================================================
+const RECIPES = [
+  { id: 1, name: "Caprese Skewers", calories: 280,
+    ingredients: ["2 cups cherry tomatoes","8 oz fresh mozzarella balls","1/2 cup fresh basil leaves","3 tbsp balsamic glaze"],
+    instructions: "Thread tomatoes, mozzarella balls, and basil leaves alternately onto small skewers. Arrange on a platter and drizzle with balsamic glaze just before serving."
+  },
+  { id: 2, name: "Watermelon Feta Salad", calories: 220,
+    ingredients: ["4 cups cubed watermelon","1 cup crumbled feta cheese","1/4 cup fresh mint, chopped","2 tbsp fresh lime juice"],
+    instructions: "Toss watermelon cubes with feta and mint in a large bowl. Drizzle with lime juice, gently toss again, and chill 10 minutes before serving."
+  },
+  { id: 3, name: "Classic Avocado Toast", calories: 310,
+    ingredients: ["2 slices sourdough bread","1 ripe avocado","1 tbsp lemon juice","1/2 tsp flaky sea salt"],
+    instructions: "Toast the bread until golden. Mash avocado with lemon juice, spread thickly onto toast, and finish with flaky sea salt."
+  },
+  { id: 4, name: "Berry Yogurt Parfait", calories: 370,
+    ingredients: ["1 cup Greek yogurt","1/2 cup mixed berries","2 tbsp honey","1/4 cup granola"],
+    instructions: "Spoon half the yogurt into a glass, top with half the berries and granola. Repeat layers and drizzle honey over the top."
+  },
+  { id: 5, name: "Grilled Peaches with Ricotta", calories: 220,
+    ingredients: ["2 ripe peaches, halved and pitted","1/2 cup whole-milk ricotta","2 tbsp honey","1 tsp fresh thyme leaves"],
+    instructions: "Grill peach halves cut-side down on medium-high heat for 3–4 minutes until charred. Top with dollops of ricotta, drizzle honey, and scatter thyme."
+  },
+  { id: 6, name: "Cucumber Tomato Salad", calories: 160,
+    ingredients: ["2 cucumbers, sliced","2 large tomatoes, chopped","1/4 red onion, thinly sliced","3 tbsp red wine vinaigrette"],
+    instructions: "Combine cucumbers, tomatoes, and red onion in a bowl. Toss with vinaigrette and let sit 10 minutes for flavors to meld."
+  },
+  { id: 7, name: "Shrimp Lettuce Cups", calories: 320,
+    ingredients: ["1 lb cooked shrimp, chopped","1 head butter lettuce","1 avocado, diced","2 tbsp fresh lime juice"],
+    instructions: "Separate lettuce leaves and rinse. Toss shrimp with avocado and lime juice, then spoon into lettuce cups just before serving."
+  },
+  { id: 8, name: "Caprese Sandwich", calories: 450,
+    ingredients: ["1 ciabatta roll, split","4 oz fresh mozzarella, sliced","1 tomato, sliced","5 fresh basil leaves"],
+    instructions: "Layer mozzarella, tomato slices, and basil onto the ciabatta. Press gently, slice in half, and serve at room temperature."
+  },
+  { id: 9, name: "Strawberry Spinach Salad", calories: 210,
+    ingredients: ["4 cups baby spinach","1 cup sliced strawberries","1/4 cup crumbled feta","2 tbsp balsamic vinaigrette"],
+    instructions: "Toss spinach with strawberries and feta in a large bowl. Drizzle with vinaigrette just before serving so the greens stay crisp."
+  },
+  { id: 10, name: "Lemon Chicken Skewers", calories: 400,
+    ingredients: ["1 lb chicken breast, cubed","2 lemons (juiced, plus zest)","3 tbsp olive oil","1 tsp dried oregano"],
+    instructions: "Marinate chicken in lemon juice, zest, oil, and oregano for 20 minutes. Thread onto skewers and grill 4 minutes per side until cooked through."
+  },
+  { id: 11, name: "Tuna Avocado Bowl", calories: 400,
+    ingredients: ["2 cans tuna, drained","1 avocado, diced","2 tbsp lime juice","1/4 cup chopped cilantro"],
+    instructions: "Flake tuna into a bowl and gently fold in avocado, lime juice, and cilantro. Season with salt and serve chilled."
+  },
+  { id: 12, name: "Mango Black Bean Salad", calories: 260,
+    ingredients: ["1 ripe mango, diced","1 can black beans, rinsed","2 tbsp lime juice","1/4 cup chopped cilantro"],
+    instructions: "Combine mango and black beans in a bowl. Toss with lime juice and cilantro, then let sit 10 minutes before serving."
+  },
+  { id: 13, name: "Summer Corn on the Cob", calories: 200,
+    ingredients: ["4 ears fresh corn, husked","3 tbsp butter, melted","1/2 tsp sea salt","1/4 tsp cracked pepper"],
+    instructions: "Boil corn for 4 minutes or grill for 8 minutes, turning. Brush with melted butter and sprinkle with salt and pepper."
+  },
+  { id: 14, name: "Tomato Bruschetta", calories: 300,
+    ingredients: ["4 slices crusty bread","2 cups diced tomatoes","1/4 cup chopped basil","1 garlic clove"],
+    instructions: "Toast bread and rub with the cut garlic clove. Mix tomatoes with basil and a pinch of salt, then spoon generously over the toasts."
+  },
+  { id: 15, name: "Cold Gazpacho", calories: 150,
+    ingredients: ["4 large ripe tomatoes","1 cucumber, peeled","1 red bell pepper","3 tbsp olive oil"],
+    instructions: "Blend all ingredients until smooth, adding a splash of water if needed. Chill at least 2 hours and serve in bowls with a drizzle of olive oil."
+  },
+  { id: 16, name: "Melon & Prosciutto", calories: 200,
+    ingredients: ["1/2 cantaloupe, cubed","4 oz prosciutto, thinly sliced","10 fresh mint leaves","1 tbsp lime juice"],
+    instructions: "Wrap each melon cube with a small piece of prosciutto. Arrange on a platter, scatter mint leaves, and finish with a squeeze of lime."
+  },
+  { id: 17, name: "Simple Greek Salad", calories: 300,
+    ingredients: ["2 cucumbers, chopped","2 tomatoes, chopped","1/2 cup kalamata olives","1/2 cup crumbled feta"],
+    instructions: "Combine cucumbers, tomatoes, and olives in a bowl. Top with feta and a drizzle of olive oil (optional) plus a pinch of oregano."
+  },
+  { id: 18, name: "Grilled Lemon Salmon", calories: 450,
+    ingredients: ["4 salmon fillets (5 oz each)","2 lemons, sliced","2 tbsp olive oil","1 tbsp fresh dill"],
+    instructions: "Brush salmon with oil and season with salt. Grill skin-side down 4–5 minutes, flip for 2 more. Top with lemon slices and dill."
+  },
+  { id: 19, name: "Zucchini Noodles with Pesto", calories: 350,
+    ingredients: ["3 medium zucchini, spiralized","1/3 cup basil pesto","1 cup cherry tomatoes, halved","2 tbsp grated parmesan"],
+    instructions: "Toss raw zucchini noodles with pesto until fully coated. Fold in cherry tomatoes, top with parmesan, and serve immediately."
+  },
+  { id: 20, name: "Berry Smoothie Bowl", calories: 400,
+    ingredients: ["1.5 cups frozen mixed berries","1 banana","1/2 cup Greek yogurt","1/4 cup granola"],
+    instructions: "Blend berries, banana, and yogurt until thick and smooth. Pour into a bowl and top with granola and a few fresh berries."
+  },
+  { id: 21, name: "Cool Cucumber Yogurt Soup", calories: 150,
+    ingredients: ["2 cucumbers, peeled and chopped","1.5 cups plain yogurt","2 tbsp fresh dill","1 garlic clove"],
+    instructions: "Blend everything until silky smooth. Chill at least 1 hour, then ladle into bowls with extra dill on top."
+  },
+  { id: 22, name: "Grilled Shrimp Tacos", calories: 400,
+    ingredients: ["1 lb shrimp, peeled","6 small corn tortillas","2 cups shredded cabbage","3 tbsp lime juice"],
+    instructions: "Grill shrimp 2 minutes per side. Warm tortillas and fill with shrimp and cabbage. Finish with a squeeze of lime."
+  },
+  { id: 23, name: "Chickpea Cucumber Salad", calories: 350,
+    ingredients: ["1 can chickpeas, rinsed","2 cucumbers, diced","1/2 cup crumbled feta","3 tbsp lemon vinaigrette"],
+    instructions: "Combine chickpeas, cucumbers, and feta in a bowl. Toss with lemon vinaigrette and let marinate 15 minutes before serving."
+  },
+  { id: 24, name: "Peach Burrata Salad", calories: 400,
+    ingredients: ["2 ripe peaches, sliced","4 oz burrata","2 cups arugula","2 tbsp balsamic glaze"],
+    instructions: "Arrange peaches and arugula on a platter. Tear burrata over the top and finish with a generous drizzle of balsamic glaze."
+  },
+  { id: 25, name: "Tomato Mozzarella Flatbread", calories: 500,
+    ingredients: ["1 pre-baked flatbread","6 oz fresh mozzarella, sliced","2 tomatoes, sliced","1/4 cup basil leaves"],
+    instructions: "Top flatbread with mozzarella and tomatoes. Bake at 425°F for 8 minutes until cheese melts. Scatter basil before serving."
+  },
+  { id: 26, name: "Avocado Egg Toast", calories: 400,
+    ingredients: ["2 slices whole-grain bread","1 avocado","2 eggs","1/4 tsp red chili flakes"],
+    instructions: "Fry or poach the eggs. Toast bread and spread with mashed avocado. Top each slice with an egg and a sprinkle of chili flakes."
+  },
+  { id: 27, name: "Grilled Veggie Skewers", calories: 200,
+    ingredients: ["2 zucchini, sliced","2 bell peppers, chunked","1 red onion, wedged","3 tbsp olive oil"],
+    instructions: "Toss vegetables with oil and salt, then thread onto skewers. Grill over medium-high heat 10 minutes, turning, until charred and tender."
+  },
+  { id: 28, name: "Strawberry Ricotta Toast", calories: 300,
+    ingredients: ["2 slices brioche","1/2 cup ricotta","1 cup sliced strawberries","2 tsp honey"],
+    instructions: "Toast the brioche lightly. Spread with ricotta, pile on strawberries, and finish with a drizzle of honey."
+  },
+  { id: 29, name: "Tropical Fruit Salad", calories: 200,
+    ingredients: ["2 cups pineapple chunks","1 mango, diced","2 kiwis, sliced","2 tbsp lime juice"],
+    instructions: "Toss all the fruit in a bowl and squeeze lime juice over the top. Chill 15 minutes before serving for best flavor."
+  },
+  { id: 30, name: "Mediterranean Tuna Salad", calories: 350,
+    ingredients: ["2 cans tuna, drained","1/2 cup kalamata olives","2 tomatoes, chopped","3 tbsp olive oil"],
+    instructions: "Flake tuna into a bowl and gently fold in olives, tomatoes, and olive oil. Season with salt and pepper and serve on greens or bread."
+  },
+  { id: 31, name: "Watermelon Cucumber Salad", calories: 200,
+    ingredients: ["3 cups cubed watermelon","2 cucumbers, sliced","1/2 cup crumbled feta","1/4 cup fresh mint"],
+    instructions: "Combine watermelon and cucumber in a bowl. Top with feta and mint, then toss very gently and serve cold."
+  },
+  { id: 32, name: "Grilled Chicken Caesar", calories: 450,
+    ingredients: ["2 grilled chicken breasts, sliced","1 head romaine, chopped","1/4 cup shaved parmesan","3 tbsp Caesar dressing"],
+    instructions: "Toss romaine with dressing until coated. Top with sliced grilled chicken and shaved parmesan."
+  },
+  { id: 33, name: "Asian Cucumber Salad", calories: 110,
+    ingredients: ["3 cucumbers, thinly sliced","2 tsp toasted sesame oil","1 tbsp rice vinegar","1 tsp sesame seeds"],
+    instructions: "Toss cucumber slices with sesame oil and rice vinegar. Sprinkle with sesame seeds and chill 20 minutes before serving."
+  },
+  { id: 34, name: "Quick Tomato Basil Soup", calories: 250,
+    ingredients: ["1 can (28 oz) crushed tomatoes","1/2 cup heavy cream","1/4 cup fresh basil","1 garlic clove, minced"],
+    instructions: "Simmer tomatoes and garlic 10 minutes. Stir in cream and basil, blend until smooth, and season with salt."
+  },
+  { id: 35, name: "Baked Cod with Lemon", calories: 300,
+    ingredients: ["4 cod fillets (5 oz each)","1 lemon, sliced","2 tbsp olive oil","2 tbsp chopped parsley"],
+    instructions: "Place cod on a baking sheet, drizzle with oil, and top with lemon slices. Bake at 400°F for 12 minutes, then scatter parsley."
+  },
+  { id: 36, name: "Portobello Burger", calories: 450,
+    ingredients: ["2 portobello caps","2 burger buns","1 tomato, sliced","1/2 avocado, sliced"],
+    instructions: "Grill portobello caps 4 minutes per side. Toast buns and stack with mushroom, tomato, and avocado."
+  },
+  { id: 37, name: "Summer Veggie Wrap", calories: 400,
+    ingredients: ["2 large tortillas","1/2 cup hummus","1 cucumber, sliced","1 tomato, sliced"],
+    instructions: "Spread hummus evenly onto each tortilla. Layer cucumber and tomato, roll tightly, and slice in half."
+  },
+  { id: 38, name: "Citrus Shrimp Salad", calories: 350,
+    ingredients: ["1 lb cooked shrimp","4 cups arugula","1 orange, segmented","3 tbsp olive oil"],
+    instructions: "Toss arugula with olive oil and a pinch of salt. Top with shrimp and orange segments and serve immediately."
+  },
+  { id: 39, name: "Blueberry Goat Cheese Salad", calories: 300,
+    ingredients: ["4 cups mixed greens","1 cup fresh blueberries","1/4 cup crumbled goat cheese","3 tbsp balsamic vinaigrette"],
+    instructions: "Toss greens with vinaigrette until lightly coated. Top with blueberries and goat cheese and serve."
+  },
+  { id: 40, name: "Chicken Lettuce Wraps", calories: 400,
+    ingredients: ["1 lb ground chicken, cooked","1 head butter lettuce","3 tbsp hoisin sauce","1/4 cup sliced green onion"],
+    instructions: "Stir hoisin into the warm cooked chicken. Spoon into lettuce leaves and top with green onion just before serving."
+  },
+  { id: 41, name: "Grilled Pineapple Chicken", calories: 450,
+    ingredients: ["1 lb chicken breast","1 cup pineapple chunks","3 tbsp soy sauce","1 tsp grated ginger"],
+    instructions: "Marinate chicken in soy sauce and ginger 20 minutes. Grill 5 minutes per side, adding pineapple in the last 4 minutes."
+  },
+  { id: 42, name: "Cucumber Dill Tea Sandwich", calories: 300,
+    ingredients: ["4 slices soft white bread","4 tbsp cream cheese","1 cucumber, thinly sliced","1 tbsp fresh dill"],
+    instructions: "Spread cream cheese on each bread slice. Layer cucumber, sprinkle with dill, top with bread, and cut into triangles."
+  },
+  { id: 43, name: "Mango Shrimp Salad", calories: 400,
+    ingredients: ["1 lb cooked shrimp","1 mango, diced","1 avocado, diced","2 tbsp lime juice"],
+    instructions: "Gently combine shrimp, mango, and avocado. Drizzle with lime juice, season lightly, and serve over greens if desired."
+  },
+  { id: 44, name: "Turkey Avocado Lettuce Wrap", calories: 300,
+    ingredients: ["8 oz sliced deli turkey","1 head butter lettuce","1 avocado, sliced","1 tomato, sliced"],
+    instructions: "Lay turkey inside large lettuce leaves. Top with avocado and tomato slices, then roll and serve."
+  },
+  { id: 45, name: "BLT Avocado Toast", calories: 500,
+    ingredients: ["2 slices sourdough","4 strips cooked bacon","1/2 avocado","2 lettuce leaves"],
+    instructions: "Toast sourdough. Spread with mashed avocado and top with lettuce and bacon. Serve immediately while the bacon is crisp."
+  },
+  { id: 46, name: "Greek Chicken Bowl", calories: 500,
+    ingredients: ["2 grilled chicken breasts, sliced","1 cucumber, diced","1/2 cup crumbled feta","3 tbsp olive oil"],
+    instructions: "Divide chicken, cucumber, and feta between two bowls. Drizzle with olive oil and a pinch of oregano if desired."
+  },
+  { id: 47, name: "Strawberry Mint Salad", calories: 150,
+    ingredients: ["3 cups sliced strawberries","1/4 cup fresh mint","1 tbsp honey","1 tbsp lemon juice"],
+    instructions: "Toss strawberries with honey and lemon juice. Let sit 10 minutes, then fold in torn mint leaves just before serving."
+  },
+  { id: 48, name: "Pesto Pasta Salad", calories: 500,
+    ingredients: ["8 oz cooked pasta, cooled","1/3 cup basil pesto","1 cup halved cherry tomatoes","4 oz mozzarella pearls"],
+    instructions: "Toss pasta with pesto until evenly coated. Fold in tomatoes and mozzarella and chill 15 minutes before serving."
+  },
+  { id: 49, name: "Grilled Veggie Hummus Wrap", calories: 450,
+    ingredients: ["1 large tortilla","1/3 cup hummus","1 cup grilled veggies","2 tbsp crumbled feta"],
+    instructions: "Spread hummus on the tortilla. Add grilled veggies and feta, roll tightly, and slice in half on the bias."
+  },
+  { id: 50, name: "Frozen Yogurt Berry Bark", calories: 250,
+    ingredients: ["2 cups Greek yogurt","2 tbsp honey","1 cup mixed berries","1/4 cup granola"],
+    instructions: "Stir honey into yogurt and spread on a lined baking sheet. Scatter berries and granola on top, freeze 3 hours, and break into pieces."
+  }
+];
+
+// ============================================================
+//  STATE — persisted in localStorage
+// ============================================================
+const STORAGE_KEY = "summerBites.ratings";
+let ratings = loadRatings();
+let currentRecipe = null;
+
+function loadRatings() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+function saveRatings() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(ratings));
+  } catch (e) {
+    // localStorage unavailable — app still works for this session
+  }
+}
+
+// ============================================================
+//  RECIPE SELECTION
+// ============================================================
+function pickNextRecipe() {
+  // Prefer unrated recipes; fall back to all if everything is rated
+  const unrated = RECIPES.filter(r => !(r.id in ratings));
+  const pool = unrated.length > 0 ? unrated : RECIPES;
+
+  // Avoid showing the same recipe twice in a row if possible
+  let choice;
+  let attempts = 0;
+  do {
+    choice = pool[Math.floor(Math.random() * pool.length)];
+    attempts++;
+  } while (currentRecipe && choice.id === currentRecipe.id && pool.length > 1 && attempts < 10);
+
+  currentRecipe = choice;
+  renderRecipe(choice);
+}
+
+function showSpecificRecipe(id) {
+  const recipe = RECIPES.find(r => r.id === id);
+  if (recipe) {
+    currentRecipe = recipe;
+    renderRecipe(recipe);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+// ============================================================
+//  RENDERING
+// ============================================================
+function renderRecipe(r) {
+  const card = document.getElementById("recipeCard");
+  const ratingStatus = ratings[r.id];
+  const statusLabel =
+    ratingStatus === "liked" ? `<span class="badge" style="background:#e7f0e2;color:#3f5d33;">♥ You liked this</span>` :
+    ratingStatus === "disliked" ? `<span class="badge" style="background:#f5e1e1;color:#8a3f3f;">✕ You passed on this</span>` : "";
+
+  card.innerHTML = `
+    <h2 class="recipe-name">${r.name}</h2>
+    <div class="badges">
+      <span class="badge cal">🔥 ${r.calories} cal</span>
+      <span class="badge ing">🧺 ${r.ingredients.length} ingredient${r.ingredients.length === 1 ? "" : "s"}</span>
+      ${statusLabel}
+    </div>
+
+    <div class="section">
+      <span class="section-label">Shopping List</span>
+      <ul class="ingredients">
+        ${r.ingredients.map(i => `<li>${i}</li>`).join("")}
+      </ul>
+    </div>
+
+    <div class="section">
+      <span class="section-label">How to Make It</span>
+      <p class="instructions">${r.instructions}</p>
+    </div>
+  `;
+}
+
+function renderLists() {
+  const likedIds = Object.keys(ratings).filter(id => ratings[id] === "liked").map(Number);
+  const dislikedIds = Object.keys(ratings).filter(id => ratings[id] === "disliked").map(Number);
+
+  const likedList = document.getElementById("likedList");
+  const dislikedList = document.getElementById("dislikedList");
+
+  likedList.innerHTML = likedIds.length === 0
+    ? `<div class="empty-state">No favorites yet — tap 👍 Yum to save meals you love.</div>`
+    : likedIds.map(id => {
+        const r = RECIPES.find(x => x.id === id);
+        return `<li data-id="${r.id}"><span>${r.name}</span><span class="cal-text">${r.calories} cal</span></li>`;
+      }).join("");
+
+  dislikedList.innerHTML = dislikedIds.length === 0
+    ? `<div class="empty-state">Nothing here yet — tap 👎 to skip meals that aren't for you.</div>`
+    : dislikedIds.map(id => {
+        const r = RECIPES.find(x => x.id === id);
+        return `<li data-id="${r.id}"><span>${r.name}</span><span class="cal-text">${r.calories} cal</span></li>`;
+      }).join("");
+
+  // wire up click-to-view
+  document.querySelectorAll(".rated-list li").forEach(li => {
+    li.addEventListener("click", () => showSpecificRecipe(Number(li.dataset.id)));
+  });
+
+  document.getElementById("likedCount").textContent = likedIds.length;
+  document.getElementById("dislikedCount").textContent = dislikedIds.length;
+
+  const rated = Object.keys(ratings).length;
+  document.getElementById("progress").textContent = `${rated} of 50 tried`;
+}
+
+// ============================================================
+//  EVENT HANDLERS
+// ============================================================
+function rateCurrent(rating) {
+  if (!currentRecipe) return;
+  ratings[currentRecipe.id] = rating;
+  saveRatings();
+  renderLists();
+  pickNextRecipe();
+}
+
+document.getElementById("likeBtn").addEventListener("click", () => rateCurrent("liked"));
+document.getElementById("dislikeBtn").addEventListener("click", () => rateCurrent("disliked"));
+document.getElementById("skipBtn").addEventListener("click", () => pickNextRecipe());
+
+document.getElementById("resetBtn").addEventListener("click", () => {
+  if (confirm("Clear all your ratings and start fresh?")) {
+    ratings = {};
+    saveRatings();
+    renderLists();
+    pickNextRecipe();
+  }
+});
+
+// Tab switching
+document.querySelectorAll(".tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+    document.querySelectorAll(".list-panel").forEach(p => p.classList.remove("active"));
+    tab.classList.add("active");
+    document.getElementById(tab.dataset.tab + "Panel").classList.add("active");
+  });
+});
+
+// Keyboard shortcuts: ← dislike, → like, space skip
+document.addEventListener("keydown", (e) => {
+  if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+  if (e.key === "ArrowRight") { e.preventDefault(); rateCurrent("liked"); }
+  else if (e.key === "ArrowLeft") { e.preventDefault(); rateCurrent("disliked"); }
+  else if (e.key === " ") { e.preventDefault(); pickNextRecipe(); }
+});
+
+// ============================================================
+//  INITIAL RENDER
+// ============================================================
+pickNextRecipe();
+renderLists();
+</script>
+
+</body>
+</html>
