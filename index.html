@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Summer Bites — 50 Easy Summer Meals</title>
-<meta name="description" content="50 summer recipes, 4 ingredients or fewer, under 600 calories. Like or skip to build your menu.">
+<title>Summer Bites — 250 Easy Summer Meals</title>
+<meta name="description" content="250 summer recipes, 4 ingredients or fewer, under 600 calories.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -26,8 +26,12 @@
     --rose: #c17070;
     --rose-dark: #a55656;
     --sun: #f4c753;
-    --shadow: 0 6px 24px rgba(78, 52, 22, 0.10), 0 2px 6px rgba(78, 52, 22, 0.06);
-    --shadow-lift: 0 12px 32px rgba(78, 52, 22, 0.15), 0 4px 10px rgba(78, 52, 22, 0.08);
+    --ocean: #4a90c4;
+    --ocean-dark: #3270a0;
+    --gold: #e8a020;
+    --gold-dark: #c47e10;
+    --shadow: 0 6px 24px rgba(78,52,22,.10), 0 2px 6px rgba(78,52,22,.06);
+    --shadow-lift: 0 12px 32px rgba(78,52,22,.15), 0 4px 10px rgba(78,52,22,.08);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,7 +39,7 @@
   html, body {
     background: var(--bg);
     color: var(--ink);
-    font-family: "Nunito", system-ui, sans-serif;
+    font-family: "Poppins", system-ui, sans-serif;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     line-height: 1.55;
@@ -43,344 +47,193 @@
 
   body {
     background-image:
-      radial-gradient(circle at 10% 0%, rgba(244, 199, 83, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 90% 20%, rgba(224, 120, 86, 0.10) 0%, transparent 50%),
-      radial-gradient(circle at 50% 100%, rgba(107, 142, 95, 0.08) 0%, transparent 50%);
+      radial-gradient(circle at 10% 0%, rgba(244,199,83,.15) 0%, transparent 50%),
+      radial-gradient(circle at 90% 20%, rgba(224,120,86,.10) 0%, transparent 50%),
+      radial-gradient(circle at 50% 100%, rgba(107,142,95,.08) 0%, transparent 50%);
     background-attachment: fixed;
   }
 
-  .wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 2.5rem 1.25rem 4rem;
-  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
 
-  /* ---------- HEADER ---------- */
-  header {
-    text-align: center;
-    margin-bottom: 2.5rem;
-  }
+  /* HEADER */
+  header { text-align: center; margin-bottom: 1.75rem; }
 
-  .sun-icon {
-    font-size: 2.2rem;
-    display: inline-block;
-    animation: spin 18s linear infinite;
-  }
-
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
+  .sun-icon { font-size: 2.2rem; display: inline-block; animation: spin 18s linear infinite; }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
   h1 {
-    font-family: "Fraunces", Georgia, serif;
-    font-weight: 600;
-    font-size: clamp(2.4rem, 7vw, 3.8rem);
-    letter-spacing: -0.02em;
-    line-height: 1;
-    margin: 0.5rem 0 0.75rem;
-    color: var(--ink);
-  }
-
-  h1 em {
-    font-style: italic;
+    font-family: "Pacifico", Georgia, serif;
     font-weight: 400;
-    color: var(--coral);
+    font-size: clamp(2.2rem, 7vw, 3.6rem);
+    line-height: 1.1;
+    margin: 0.5rem 0 0.6rem;
   }
+  h1 em { font-style: normal; color: var(--coral); }
 
-  .tagline {
-    font-size: 1.05rem;
-    color: var(--ink-soft);
-    max-width: 420px;
-    margin: 0 auto;
-  }
+  .tagline { font-size: 1rem; color: var(--ink-soft); max-width: 420px; margin: 0 auto; }
 
   .meta-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
-    color: var(--ink-soft);
-    flex-wrap: wrap;
+    display: flex; justify-content: center; align-items: center;
+    gap: 0.75rem; margin-top: 1.1rem; flex-wrap: wrap;
+    font-size: 0.88rem; color: var(--ink-soft);
   }
 
-  .progress-pill {
+  .progress-pill, .datetime-pill {
     background: var(--bg-warm);
-    padding: 0.4rem 0.9rem;
+    padding: 0.35rem 0.85rem;
     border-radius: 999px;
+    border: 1px solid var(--line);
     font-weight: 600;
     color: var(--ink);
-    border: 1px solid var(--line);
   }
+
+  .datetime-pill { font-weight: 500; color: var(--ink-soft); font-size: 0.82rem; }
 
   .reset-btn {
-    background: transparent;
-    border: none;
-    color: var(--ink-faint);
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 0.85rem;
-    text-decoration: underline;
-    transition: color 0.2s;
+    background: transparent; border: none; color: var(--ink-faint);
+    cursor: pointer; font-family: inherit; font-size: 0.82rem;
+    text-decoration: underline; transition: color .2s;
   }
-
   .reset-btn:hover { color: var(--rose-dark); }
 
-  /* ---------- CARD ---------- */
-  .card {
-    background: var(--card);
-    border-radius: 18px;
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--line);
-    position: relative;
-    overflow: hidden;
-    animation: fadeIn 0.4s ease-out;
+  /* FILTERS */
+  .filters {
+    display: flex; justify-content: center; gap: 0.6rem;
+    margin-bottom: 1.4rem; flex-wrap: wrap;
   }
 
+  .filter-btn {
+    padding: 0.55rem 1.25rem;
+    border: 2px solid var(--line);
+    border-radius: 999px;
+    font-family: inherit; font-size: 0.9rem; font-weight: 600;
+    cursor: pointer; background: var(--card); color: var(--ink-soft);
+    transition: all .2s;
+  }
+  .filter-btn:hover { border-color: var(--coral); color: var(--coral); }
+  .filter-btn.active { background: var(--coral); border-color: var(--coral); color: white; }
+  .filter-btn.veg.active { background: var(--sage); border-color: var(--sage); }
+  .filter-btn.meat.active { background: var(--coral-dark); border-color: var(--coral-dark); }
+
+  /* CARD */
+  .card {
+    background: var(--card); border-radius: 18px; padding: 2rem;
+    box-shadow: var(--shadow); border: 1px solid var(--line);
+    position: relative; overflow: hidden; animation: fadeIn .4s ease-out;
+  }
   .card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 6px;
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px;
     background: linear-gradient(90deg, var(--sun) 0%, var(--coral) 50%, var(--sage) 100%);
   }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
   .recipe-name {
-    font-family: "Fraunces", Georgia, serif;
-    font-weight: 600;
-    font-size: clamp(1.6rem, 4.5vw, 2.2rem);
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    margin-bottom: 0.75rem;
+    font-family: "Pacifico", Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+    line-height: 1.25; margin-bottom: 0.75rem;
   }
 
-  .badges {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.75rem;
-  }
-
+  .badges { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
   .badge {
-    background: var(--bg-warm);
-    color: var(--ink);
-    padding: 0.3rem 0.8rem;
-    border-radius: 999px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
+    background: var(--bg-warm); color: var(--ink);
+    padding: 0.3rem 0.8rem; border-radius: 999px;
+    font-size: 0.82rem; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 0.3rem;
   }
-
   .badge.cal { background: #fdf0d8; color: #8a6520; }
   .badge.ing { background: #e7f0e2; color: #3f5d33; }
 
-  .section {
-    margin-bottom: 1.5rem;
-  }
-
+  .section { margin-bottom: 1.5rem; }
   .section-label {
-    font-family: "Fraunces", Georgia, serif;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--coral);
-    font-weight: 600;
-    margin-bottom: 0.7rem;
-    display: block;
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: .18em;
+    color: var(--coral); font-weight: 700; margin-bottom: 0.65rem; display: block;
   }
 
-  .ingredients {
-    list-style: none;
-    display: grid;
-    gap: 0.5rem;
-  }
-
+  .ingredients { list-style: none; display: grid; gap: 0.45rem; }
   .ingredients li {
-    padding: 0.6rem 0.85rem;
-    background: var(--bg);
-    border-radius: 10px;
-    border: 1px solid var(--line);
-    font-size: 0.97rem;
-    color: var(--ink);
-    position: relative;
-    padding-left: 2.1rem;
+    padding: 0.55rem 0.85rem 0.55rem 2rem;
+    background: var(--bg); border-radius: 10px;
+    border: 1px solid var(--line); font-size: 0.96rem; position: relative;
   }
-
   .ingredients li::before {
-    content: "";
-    position: absolute;
-    left: 0.85rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--coral);
+    content: ""; position: absolute; left: 0.8rem; top: 50%;
+    transform: translateY(-50%); width: 8px; height: 8px;
+    border-radius: 50%; background: var(--coral);
   }
+  .instructions { font-size: 0.98rem; color: var(--ink); line-height: 1.68; }
 
-  .instructions {
-    font-size: 1rem;
-    color: var(--ink);
-    line-height: 1.65;
-  }
-
-  /* ---------- ACTIONS ---------- */
+  /* ACTIONS */
   .actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.7rem;
-    margin-top: 1.75rem;
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.65rem; margin-top: 1.5rem;
   }
 
   .btn {
-    padding: 0.9rem 0.8rem;
-    border: none;
-    border-radius: 12px;
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.2s, background 0.2s;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
+    padding: 1.1rem 0.6rem; border: none; border-radius: 14px;
+    font-family: inherit; font-weight: 700; cursor: pointer;
+    transition: transform .15s ease, box-shadow .2s, background .2s;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 0.3rem;
   }
+  .btn-icon { font-size: 1.6rem; line-height: 1; }
+  .btn-label { font-size: 0.72rem; font-weight: 600; opacity: .9; white-space: nowrap; }
 
-  .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lift);
-  }
+  .btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+  .btn:active { transform: translateY(0); }
 
-  .btn:active {
-    transform: translateY(0);
-  }
-
-  .btn-like {
-    background: var(--sage);
-    color: white;
-  }
-  .btn-like:hover { background: var(--sage-dark); }
-
-  .btn-skip {
-    background: var(--card);
-    color: var(--ink);
-    border: 1px solid var(--line);
-  }
-  .btn-skip:hover { background: var(--bg-warm); }
-
-  .btn-dislike {
-    background: var(--rose);
-    color: white;
-  }
+  .btn-dislike { background: var(--rose); color: white; }
   .btn-dislike:hover { background: var(--rose-dark); }
 
-  /* ---------- LISTS ---------- */
-  .lists {
-    margin-top: 3rem;
-  }
+  .btn-skip { background: var(--ocean); color: white; }
+  .btn-skip:hover { background: var(--ocean-dark); }
 
+  .btn-like { background: var(--sage); color: white; }
+  .btn-like:hover { background: var(--sage-dark); }
+
+  .btn-favorite { background: var(--gold); color: white; }
+  .btn-favorite:hover { background: var(--gold-dark); }
+  .btn-favorite.is-favorited { background: var(--gold-dark); box-shadow: 0 0 0 3px rgba(232,160,32,.35); }
+
+  /* LISTS */
+  .lists { margin-top: 3rem; }
   .tabs {
-    display: flex;
-    gap: 0.5rem;
-    border-bottom: 1px solid var(--line);
-    margin-bottom: 1rem;
+    display: flex; gap: 0.4rem; border-bottom: 1px solid var(--line);
+    margin-bottom: 1rem; flex-wrap: wrap;
   }
-
   .tab {
-    background: transparent;
-    border: none;
-    padding: 0.75rem 1rem;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--ink-soft);
-    border-bottom: 2px solid transparent;
-    margin-bottom: -1px;
-    transition: color 0.2s, border-color 0.2s;
+    background: transparent; border: none; padding: 0.7rem 0.9rem; cursor: pointer;
+    font-family: inherit; font-size: 0.92rem; font-weight: 600; color: var(--ink-soft);
+    border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color .2s, border-color .2s;
   }
-
-  .tab.active {
-    color: var(--ink);
-    border-bottom-color: var(--coral);
-  }
-
+  .tab.active { color: var(--ink); border-bottom-color: var(--coral); }
   .tab-count {
-    background: var(--bg-warm);
-    padding: 0.1rem 0.5rem;
-    border-radius: 999px;
-    font-size: 0.75rem;
-    margin-left: 0.3rem;
+    background: var(--bg-warm); padding: .1rem .45rem;
+    border-radius: 999px; font-size: .73rem; margin-left: .25rem;
   }
+  .list-panel { display: none; }
+  .list-panel.active { display: block; }
 
-  .list-panel {
-    display: none;
-  }
-  .list-panel.active {
-    display: block;
-  }
-
-  .rated-list {
-    list-style: none;
-    display: grid;
-    gap: 0.5rem;
-  }
-
+  .rated-list { list-style: none; display: grid; gap: 0.45rem; }
   .rated-list li {
-    padding: 0.7rem 1rem;
-    background: var(--card);
-    border-radius: 10px;
-    border: 1px solid var(--line);
-    cursor: pointer;
-    font-size: 0.95rem;
-    transition: background 0.15s, transform 0.15s;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 0.65rem 1rem; background: var(--card);
+    border-radius: 10px; border: 1px solid var(--line);
+    cursor: pointer; font-size: 0.93rem;
+    transition: background .15s, transform .15s;
+    display: flex; align-items: center; justify-content: space-between;
   }
+  .rated-list li:hover { background: var(--bg-warm); transform: translateX(3px); }
+  .rated-list li .cal-text { color: var(--ink-faint); font-size: 0.8rem; }
 
-  .rated-list li:hover {
-    background: var(--bg-warm);
-    transform: translateX(3px);
-  }
+  .empty-state { color: var(--ink-faint); font-style: italic; text-align: center; padding: 2rem 1rem; }
 
-  .rated-list li .cal-text {
-    color: var(--ink-faint);
-    font-size: 0.82rem;
-  }
+  footer { text-align: center; margin-top: 3rem; font-size: 0.8rem; color: var(--ink-faint); }
 
-  .empty-state {
-    color: var(--ink-faint);
-    font-style: italic;
-    text-align: center;
-    padding: 2rem 1rem;
-  }
-
-  /* ---------- FOOTER ---------- */
-  footer {
-    text-align: center;
-    margin-top: 3rem;
-    font-size: 0.8rem;
-    color: var(--ink-faint);
-  }
-
-  /* ---------- RESPONSIVE ---------- */
   @media (max-width: 540px) {
     .wrap { padding: 1.5rem 1rem 3rem; }
-    .card { padding: 1.5rem 1.25rem; }
-    .actions { grid-template-columns: 1fr; }
-    .btn { padding: 0.85rem; }
+    .card { padding: 1.5rem 1.1rem; }
+    .actions { grid-template-columns: 1fr 1fr; gap: 0.55rem; }
+    .btn { padding: 1rem 0.6rem; }
   }
 </style>
 </head>
@@ -391,396 +244,971 @@
   <header>
     <span class="sun-icon" aria-hidden="true">☀️</span>
     <h1>Summer <em>Bites</em></h1>
-    <p class="tagline">50 fresh meals. Four ingredients or fewer. All under 600 calories.</p>
+    <p class="tagline">250 fresh meals. Four ingredients or fewer. All under 600 calories.</p>
     <div class="meta-bar">
-      <span class="progress-pill" id="progress">0 of 50 tried</span>
+      <span class="progress-pill" id="progress">0 of 250 tried</span>
+      <span class="datetime-pill" id="datetimePill"></span>
       <button class="reset-btn" id="resetBtn">Reset all ratings</button>
     </div>
   </header>
 
-  <main class="card" id="recipeCard">
-    <!-- Recipe content injected here -->
-  </main>
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">🍽️ All</button>
+    <button class="filter-btn veg" data-filter="veg">🥗 Vegetarian</button>
+    <button class="filter-btn meat" data-filter="meat">🍗 Meat &amp; Seafood</button>
+  </div>
+
+  <main class="card" id="recipeCard"></main>
 
   <div class="actions">
-    <button class="btn btn-dislike" id="dislikeBtn">👎 Not for me</button>
-    <button class="btn btn-skip" id="skipBtn">🔀 Skip</button>
-    <button class="btn btn-like" id="likeBtn">👍 Yum</button>
+    <button class="btn btn-dislike" id="dislikeBtn">
+      <span class="btn-icon">👎</span><span class="btn-label">Not for me</span>
+    </button>
+    <button class="btn btn-skip" id="skipBtn">
+      <span class="btn-icon">🔀</span><span class="btn-label">Skip</span>
+    </button>
+    <button class="btn btn-like" id="likeBtn">
+      <span class="btn-icon">👍</span><span class="btn-label">Yum!</span>
+    </button>
+    <button class="btn btn-favorite" id="favoriteBtn">
+      <span class="btn-icon">⭐</span><span class="btn-label">Favorite</span>
+    </button>
   </div>
 
   <section class="lists">
     <div class="tabs">
-      <button class="tab active" data-tab="liked">
-        ♥ Liked <span class="tab-count" id="likedCount">0</span>
-      </button>
-      <button class="tab" data-tab="disliked">
-        ✕ Passed <span class="tab-count" id="dislikedCount">0</span>
-      </button>
+      <button class="tab active" data-tab="liked">♥ Liked <span class="tab-count" id="likedCount">0</span></button>
+      <button class="tab" data-tab="favorites">⭐ Favorites <span class="tab-count" id="favoritesCount">0</span></button>
+      <button class="tab" data-tab="disliked">✕ Passed <span class="tab-count" id="dislikedCount">0</span></button>
     </div>
-    <div class="list-panel active" id="likedPanel">
-      <ul class="rated-list" id="likedList"></ul>
-    </div>
-    <div class="list-panel" id="dislikedPanel">
-      <ul class="rated-list" id="dislikedList"></ul>
-    </div>
+    <div class="list-panel active" id="likedPanel"><ul class="rated-list" id="likedList"></ul></div>
+    <div class="list-panel" id="favoritesPanel"><ul class="rated-list" id="favoritesList"></ul></div>
+    <div class="list-panel" id="dislikedPanel"><ul class="rated-list" id="dislikedList"></ul></div>
   </section>
 
-  <footer>
-    Made with sunshine ☀️ · Click any rated recipe to view it again
-  </footer>
+  <footer>Made with sunshine ☀️ · Click any recipe below to view it again</footer>
 
 </div>
 
 <script>
-// ============================================================
-//  50 SUMMER RECIPES — all ≤ 4 ingredients, all < 600 calories
-// ============================================================
 const RECIPES = [
-  { id: 1, name: "Caprese Skewers", calories: 280,
-    ingredients: ["2 cups cherry tomatoes","8 oz fresh mozzarella balls","1/2 cup fresh basil leaves","3 tbsp balsamic glaze"],
-    instructions: "Thread tomatoes, mozzarella balls, and basil leaves alternately onto small skewers. Arrange on a platter and drizzle with balsamic glaze just before serving."
-  },
-  { id: 2, name: "Watermelon Feta Salad", calories: 220,
-    ingredients: ["4 cups cubed watermelon","1 cup crumbled feta cheese","1/4 cup fresh mint, chopped","2 tbsp fresh lime juice"],
-    instructions: "Toss watermelon cubes with feta and mint in a large bowl. Drizzle with lime juice, gently toss again, and chill 10 minutes before serving."
-  },
-  { id: 3, name: "Classic Avocado Toast", calories: 310,
-    ingredients: ["2 slices sourdough bread","1 ripe avocado","1 tbsp lemon juice","1/2 tsp flaky sea salt"],
-    instructions: "Toast the bread until golden. Mash avocado with lemon juice, spread thickly onto toast, and finish with flaky sea salt."
-  },
-  { id: 4, name: "Berry Yogurt Parfait", calories: 370,
-    ingredients: ["1 cup Greek yogurt","1/2 cup mixed berries","2 tbsp honey","1/4 cup granola"],
-    instructions: "Spoon half the yogurt into a glass, top with half the berries and granola. Repeat layers and drizzle honey over the top."
-  },
-  { id: 5, name: "Grilled Peaches with Ricotta", calories: 220,
-    ingredients: ["2 ripe peaches, halved and pitted","1/2 cup whole-milk ricotta","2 tbsp honey","1 tsp fresh thyme leaves"],
-    instructions: "Grill peach halves cut-side down on medium-high heat for 3–4 minutes until charred. Top with dollops of ricotta, drizzle honey, and scatter thyme."
-  },
-  { id: 6, name: "Cucumber Tomato Salad", calories: 160,
-    ingredients: ["2 cucumbers, sliced","2 large tomatoes, chopped","1/4 red onion, thinly sliced","3 tbsp red wine vinaigrette"],
-    instructions: "Combine cucumbers, tomatoes, and red onion in a bowl. Toss with vinaigrette and let sit 10 minutes for flavors to meld."
-  },
-  { id: 7, name: "Shrimp Lettuce Cups", calories: 320,
-    ingredients: ["1 lb cooked shrimp, chopped","1 head butter lettuce","1 avocado, diced","2 tbsp fresh lime juice"],
-    instructions: "Separate lettuce leaves and rinse. Toss shrimp with avocado and lime juice, then spoon into lettuce cups just before serving."
-  },
-  { id: 8, name: "Caprese Sandwich", calories: 450,
-    ingredients: ["1 ciabatta roll, split","4 oz fresh mozzarella, sliced","1 tomato, sliced","5 fresh basil leaves"],
-    instructions: "Layer mozzarella, tomato slices, and basil onto the ciabatta. Press gently, slice in half, and serve at room temperature."
-  },
-  { id: 9, name: "Strawberry Spinach Salad", calories: 210,
-    ingredients: ["4 cups baby spinach","1 cup sliced strawberries","1/4 cup crumbled feta","2 tbsp balsamic vinaigrette"],
-    instructions: "Toss spinach with strawberries and feta in a large bowl. Drizzle with vinaigrette just before serving so the greens stay crisp."
-  },
-  { id: 10, name: "Lemon Chicken Skewers", calories: 400,
-    ingredients: ["1 lb chicken breast, cubed","2 lemons (juiced, plus zest)","3 tbsp olive oil","1 tsp dried oregano"],
-    instructions: "Marinate chicken in lemon juice, zest, oil, and oregano for 20 minutes. Thread onto skewers and grill 4 minutes per side until cooked through."
-  },
-  { id: 11, name: "Tuna Avocado Bowl", calories: 400,
-    ingredients: ["2 cans tuna, drained","1 avocado, diced","2 tbsp lime juice","1/4 cup chopped cilantro"],
-    instructions: "Flake tuna into a bowl and gently fold in avocado, lime juice, and cilantro. Season with salt and serve chilled."
-  },
-  { id: 12, name: "Mango Black Bean Salad", calories: 260,
-    ingredients: ["1 ripe mango, diced","1 can black beans, rinsed","2 tbsp lime juice","1/4 cup chopped cilantro"],
-    instructions: "Combine mango and black beans in a bowl. Toss with lime juice and cilantro, then let sit 10 minutes before serving."
-  },
-  { id: 13, name: "Summer Corn on the Cob", calories: 200,
-    ingredients: ["4 ears fresh corn, husked","3 tbsp butter, melted","1/2 tsp sea salt","1/4 tsp cracked pepper"],
-    instructions: "Boil corn for 4 minutes or grill for 8 minutes, turning. Brush with melted butter and sprinkle with salt and pepper."
-  },
-  { id: 14, name: "Tomato Bruschetta", calories: 300,
-    ingredients: ["4 slices crusty bread","2 cups diced tomatoes","1/4 cup chopped basil","1 garlic clove"],
-    instructions: "Toast bread and rub with the cut garlic clove. Mix tomatoes with basil and a pinch of salt, then spoon generously over the toasts."
-  },
-  { id: 15, name: "Cold Gazpacho", calories: 150,
-    ingredients: ["4 large ripe tomatoes","1 cucumber, peeled","1 red bell pepper","3 tbsp olive oil"],
-    instructions: "Blend all ingredients until smooth, adding a splash of water if needed. Chill at least 2 hours and serve in bowls with a drizzle of olive oil."
-  },
-  { id: 16, name: "Melon & Prosciutto", calories: 200,
-    ingredients: ["1/2 cantaloupe, cubed","4 oz prosciutto, thinly sliced","10 fresh mint leaves","1 tbsp lime juice"],
-    instructions: "Wrap each melon cube with a small piece of prosciutto. Arrange on a platter, scatter mint leaves, and finish with a squeeze of lime."
-  },
-  { id: 17, name: "Simple Greek Salad", calories: 300,
-    ingredients: ["2 cucumbers, chopped","2 tomatoes, chopped","1/2 cup kalamata olives","1/2 cup crumbled feta"],
-    instructions: "Combine cucumbers, tomatoes, and olives in a bowl. Top with feta and a drizzle of olive oil (optional) plus a pinch of oregano."
-  },
-  { id: 18, name: "Grilled Lemon Salmon", calories: 450,
-    ingredients: ["4 salmon fillets (5 oz each)","2 lemons, sliced","2 tbsp olive oil","1 tbsp fresh dill"],
-    instructions: "Brush salmon with oil and season with salt. Grill skin-side down 4–5 minutes, flip for 2 more. Top with lemon slices and dill."
-  },
-  { id: 19, name: "Zucchini Noodles with Pesto", calories: 350,
-    ingredients: ["3 medium zucchini, spiralized","1/3 cup basil pesto","1 cup cherry tomatoes, halved","2 tbsp grated parmesan"],
-    instructions: "Toss raw zucchini noodles with pesto until fully coated. Fold in cherry tomatoes, top with parmesan, and serve immediately."
-  },
-  { id: 20, name: "Berry Smoothie Bowl", calories: 400,
-    ingredients: ["1.5 cups frozen mixed berries","1 banana","1/2 cup Greek yogurt","1/4 cup granola"],
-    instructions: "Blend berries, banana, and yogurt until thick and smooth. Pour into a bowl and top with granola and a few fresh berries."
-  },
-  { id: 21, name: "Cool Cucumber Yogurt Soup", calories: 150,
-    ingredients: ["2 cucumbers, peeled and chopped","1.5 cups plain yogurt","2 tbsp fresh dill","1 garlic clove"],
-    instructions: "Blend everything until silky smooth. Chill at least 1 hour, then ladle into bowls with extra dill on top."
-  },
-  { id: 22, name: "Grilled Shrimp Tacos", calories: 400,
-    ingredients: ["1 lb shrimp, peeled","6 small corn tortillas","2 cups shredded cabbage","3 tbsp lime juice"],
-    instructions: "Grill shrimp 2 minutes per side. Warm tortillas and fill with shrimp and cabbage. Finish with a squeeze of lime."
-  },
-  { id: 23, name: "Chickpea Cucumber Salad", calories: 350,
-    ingredients: ["1 can chickpeas, rinsed","2 cucumbers, diced","1/2 cup crumbled feta","3 tbsp lemon vinaigrette"],
-    instructions: "Combine chickpeas, cucumbers, and feta in a bowl. Toss with lemon vinaigrette and let marinate 15 minutes before serving."
-  },
-  { id: 24, name: "Peach Burrata Salad", calories: 400,
-    ingredients: ["2 ripe peaches, sliced","4 oz burrata","2 cups arugula","2 tbsp balsamic glaze"],
-    instructions: "Arrange peaches and arugula on a platter. Tear burrata over the top and finish with a generous drizzle of balsamic glaze."
-  },
-  { id: 25, name: "Tomato Mozzarella Flatbread", calories: 500,
-    ingredients: ["1 pre-baked flatbread","6 oz fresh mozzarella, sliced","2 tomatoes, sliced","1/4 cup basil leaves"],
-    instructions: "Top flatbread with mozzarella and tomatoes. Bake at 425°F for 8 minutes until cheese melts. Scatter basil before serving."
-  },
-  { id: 26, name: "Avocado Egg Toast", calories: 400,
-    ingredients: ["2 slices whole-grain bread","1 avocado","2 eggs","1/4 tsp red chili flakes"],
-    instructions: "Fry or poach the eggs. Toast bread and spread with mashed avocado. Top each slice with an egg and a sprinkle of chili flakes."
-  },
-  { id: 27, name: "Grilled Veggie Skewers", calories: 200,
-    ingredients: ["2 zucchini, sliced","2 bell peppers, chunked","1 red onion, wedged","3 tbsp olive oil"],
-    instructions: "Toss vegetables with oil and salt, then thread onto skewers. Grill over medium-high heat 10 minutes, turning, until charred and tender."
-  },
-  { id: 28, name: "Strawberry Ricotta Toast", calories: 300,
-    ingredients: ["2 slices brioche","1/2 cup ricotta","1 cup sliced strawberries","2 tsp honey"],
-    instructions: "Toast the brioche lightly. Spread with ricotta, pile on strawberries, and finish with a drizzle of honey."
-  },
-  { id: 29, name: "Tropical Fruit Salad", calories: 200,
-    ingredients: ["2 cups pineapple chunks","1 mango, diced","2 kiwis, sliced","2 tbsp lime juice"],
-    instructions: "Toss all the fruit in a bowl and squeeze lime juice over the top. Chill 15 minutes before serving for best flavor."
-  },
-  { id: 30, name: "Mediterranean Tuna Salad", calories: 350,
-    ingredients: ["2 cans tuna, drained","1/2 cup kalamata olives","2 tomatoes, chopped","3 tbsp olive oil"],
-    instructions: "Flake tuna into a bowl and gently fold in olives, tomatoes, and olive oil. Season with salt and pepper and serve on greens or bread."
-  },
-  { id: 31, name: "Watermelon Cucumber Salad", calories: 200,
-    ingredients: ["3 cups cubed watermelon","2 cucumbers, sliced","1/2 cup crumbled feta","1/4 cup fresh mint"],
-    instructions: "Combine watermelon and cucumber in a bowl. Top with feta and mint, then toss very gently and serve cold."
-  },
-  { id: 32, name: "Grilled Chicken Caesar", calories: 450,
-    ingredients: ["2 grilled chicken breasts, sliced","1 head romaine, chopped","1/4 cup shaved parmesan","3 tbsp Caesar dressing"],
-    instructions: "Toss romaine with dressing until coated. Top with sliced grilled chicken and shaved parmesan."
-  },
-  { id: 33, name: "Asian Cucumber Salad", calories: 110,
-    ingredients: ["3 cucumbers, thinly sliced","2 tsp toasted sesame oil","1 tbsp rice vinegar","1 tsp sesame seeds"],
-    instructions: "Toss cucumber slices with sesame oil and rice vinegar. Sprinkle with sesame seeds and chill 20 minutes before serving."
-  },
-  { id: 34, name: "Quick Tomato Basil Soup", calories: 250,
-    ingredients: ["1 can (28 oz) crushed tomatoes","1/2 cup heavy cream","1/4 cup fresh basil","1 garlic clove, minced"],
-    instructions: "Simmer tomatoes and garlic 10 minutes. Stir in cream and basil, blend until smooth, and season with salt."
-  },
-  { id: 35, name: "Baked Cod with Lemon", calories: 300,
-    ingredients: ["4 cod fillets (5 oz each)","1 lemon, sliced","2 tbsp olive oil","2 tbsp chopped parsley"],
-    instructions: "Place cod on a baking sheet, drizzle with oil, and top with lemon slices. Bake at 400°F for 12 minutes, then scatter parsley."
-  },
-  { id: 36, name: "Portobello Burger", calories: 450,
-    ingredients: ["2 portobello caps","2 burger buns","1 tomato, sliced","1/2 avocado, sliced"],
-    instructions: "Grill portobello caps 4 minutes per side. Toast buns and stack with mushroom, tomato, and avocado."
-  },
-  { id: 37, name: "Summer Veggie Wrap", calories: 400,
-    ingredients: ["2 large tortillas","1/2 cup hummus","1 cucumber, sliced","1 tomato, sliced"],
-    instructions: "Spread hummus evenly onto each tortilla. Layer cucumber and tomato, roll tightly, and slice in half."
-  },
-  { id: 38, name: "Citrus Shrimp Salad", calories: 350,
-    ingredients: ["1 lb cooked shrimp","4 cups arugula","1 orange, segmented","3 tbsp olive oil"],
-    instructions: "Toss arugula with olive oil and a pinch of salt. Top with shrimp and orange segments and serve immediately."
-  },
-  { id: 39, name: "Blueberry Goat Cheese Salad", calories: 300,
-    ingredients: ["4 cups mixed greens","1 cup fresh blueberries","1/4 cup crumbled goat cheese","3 tbsp balsamic vinaigrette"],
-    instructions: "Toss greens with vinaigrette until lightly coated. Top with blueberries and goat cheese and serve."
-  },
-  { id: 40, name: "Chicken Lettuce Wraps", calories: 400,
-    ingredients: ["1 lb ground chicken, cooked","1 head butter lettuce","3 tbsp hoisin sauce","1/4 cup sliced green onion"],
-    instructions: "Stir hoisin into the warm cooked chicken. Spoon into lettuce leaves and top with green onion just before serving."
-  },
-  { id: 41, name: "Grilled Pineapple Chicken", calories: 450,
-    ingredients: ["1 lb chicken breast","1 cup pineapple chunks","3 tbsp soy sauce","1 tsp grated ginger"],
-    instructions: "Marinate chicken in soy sauce and ginger 20 minutes. Grill 5 minutes per side, adding pineapple in the last 4 minutes."
-  },
-  { id: 42, name: "Cucumber Dill Tea Sandwich", calories: 300,
-    ingredients: ["4 slices soft white bread","4 tbsp cream cheese","1 cucumber, thinly sliced","1 tbsp fresh dill"],
-    instructions: "Spread cream cheese on each bread slice. Layer cucumber, sprinkle with dill, top with bread, and cut into triangles."
-  },
-  { id: 43, name: "Mango Shrimp Salad", calories: 400,
-    ingredients: ["1 lb cooked shrimp","1 mango, diced","1 avocado, diced","2 tbsp lime juice"],
-    instructions: "Gently combine shrimp, mango, and avocado. Drizzle with lime juice, season lightly, and serve over greens if desired."
-  },
-  { id: 44, name: "Turkey Avocado Lettuce Wrap", calories: 300,
-    ingredients: ["8 oz sliced deli turkey","1 head butter lettuce","1 avocado, sliced","1 tomato, sliced"],
-    instructions: "Lay turkey inside large lettuce leaves. Top with avocado and tomato slices, then roll and serve."
-  },
-  { id: 45, name: "BLT Avocado Toast", calories: 500,
-    ingredients: ["2 slices sourdough","4 strips cooked bacon","1/2 avocado","2 lettuce leaves"],
-    instructions: "Toast sourdough. Spread with mashed avocado and top with lettuce and bacon. Serve immediately while the bacon is crisp."
-  },
-  { id: 46, name: "Greek Chicken Bowl", calories: 500,
-    ingredients: ["2 grilled chicken breasts, sliced","1 cucumber, diced","1/2 cup crumbled feta","3 tbsp olive oil"],
-    instructions: "Divide chicken, cucumber, and feta between two bowls. Drizzle with olive oil and a pinch of oregano if desired."
-  },
-  { id: 47, name: "Strawberry Mint Salad", calories: 150,
-    ingredients: ["3 cups sliced strawberries","1/4 cup fresh mint","1 tbsp honey","1 tbsp lemon juice"],
-    instructions: "Toss strawberries with honey and lemon juice. Let sit 10 minutes, then fold in torn mint leaves just before serving."
-  },
-  { id: 48, name: "Pesto Pasta Salad", calories: 500,
-    ingredients: ["8 oz cooked pasta, cooled","1/3 cup basil pesto","1 cup halved cherry tomatoes","4 oz mozzarella pearls"],
-    instructions: "Toss pasta with pesto until evenly coated. Fold in tomatoes and mozzarella and chill 15 minutes before serving."
-  },
-  { id: 49, name: "Grilled Veggie Hummus Wrap", calories: 450,
-    ingredients: ["1 large tortilla","1/3 cup hummus","1 cup grilled veggies","2 tbsp crumbled feta"],
-    instructions: "Spread hummus on the tortilla. Add grilled veggies and feta, roll tightly, and slice in half on the bias."
-  },
-  { id: 50, name: "Frozen Yogurt Berry Bark", calories: 250,
-    ingredients: ["2 cups Greek yogurt","2 tbsp honey","1 cup mixed berries","1/4 cup granola"],
-    instructions: "Stir honey into yogurt and spread on a lined baking sheet. Scatter berries and granola on top, freeze 3 hours, and break into pieces."
-  }
+  { id:1, veg:true, name:"Caprese Skewers", calories:280,
+    ingredients:["2 cups cherry tomatoes","8 oz fresh mozzarella balls","1/2 cup fresh basil leaves","3 tbsp balsamic glaze"],
+    instructions:"Thread tomatoes, mozzarella, and basil alternately onto skewers. Drizzle with balsamic glaze before serving." },
+  { id:2, veg:true, name:"Watermelon Feta Salad", calories:220,
+    ingredients:["4 cups cubed watermelon","1 cup crumbled feta","1/4 cup fresh mint, chopped","2 tbsp fresh lime juice"],
+    instructions:"Toss watermelon with feta and mint. Drizzle lime juice over, toss gently, and chill 10 minutes before serving." },
+  { id:3, veg:true, name:"Classic Avocado Toast", calories:310,
+    ingredients:["2 slices sourdough bread","1 ripe avocado","1 tbsp lemon juice","1/2 tsp flaky sea salt"],
+    instructions:"Toast bread until golden. Mash avocado with lemon juice, spread thickly, and finish with flaky sea salt." },
+  { id:4, veg:true, name:"Berry Yogurt Parfait", calories:370,
+    ingredients:["1 cup Greek yogurt","1/2 cup mixed berries","2 tbsp honey","1/4 cup granola"],
+    instructions:"Spoon half the yogurt into a glass, top with half the berries and granola. Repeat layers and drizzle with honey." },
+  { id:5, veg:true, name:"Grilled Peaches with Ricotta", calories:220,
+    ingredients:["2 ripe peaches, halved and pitted","1/2 cup whole-milk ricotta","2 tbsp honey","1 tsp fresh thyme leaves"],
+    instructions:"Grill peach halves cut-side down 3–4 min until charred. Top with ricotta, drizzle honey, scatter thyme." },
+  { id:6, veg:true, name:"Cucumber Tomato Salad", calories:160,
+    ingredients:["2 cucumbers, sliced","2 large tomatoes, chopped","1/4 red onion, thinly sliced","3 tbsp red wine vinaigrette"],
+    instructions:"Combine cucumbers, tomatoes, and onion. Toss with vinaigrette and let sit 10 minutes to meld flavors." },
+  { id:7, veg:false, name:"Shrimp Lettuce Cups", calories:320,
+    ingredients:["1 lb cooked shrimp, chopped","1 head butter lettuce","1 avocado, diced","2 tbsp fresh lime juice"],
+    instructions:"Separate lettuce leaves. Toss shrimp with avocado and lime juice, then spoon into lettuce cups." },
+  { id:8, veg:true, name:"Caprese Sandwich", calories:450,
+    ingredients:["1 ciabatta roll, split","4 oz fresh mozzarella, sliced","1 tomato, sliced","5 fresh basil leaves"],
+    instructions:"Layer mozzarella, tomato, and basil onto ciabatta. Press gently, slice in half, and serve at room temperature." },
+  { id:9, veg:true, name:"Strawberry Spinach Salad", calories:210,
+    ingredients:["4 cups baby spinach","1 cup sliced strawberries","1/4 cup crumbled feta","2 tbsp balsamic vinaigrette"],
+    instructions:"Toss spinach with strawberries and feta. Drizzle with vinaigrette just before serving." },
+  { id:10, veg:false, name:"Lemon Chicken Skewers", calories:400,
+    ingredients:["1 lb chicken breast, cubed","2 lemons (juiced and zested)","3 tbsp olive oil","1 tsp dried oregano"],
+    instructions:"Marinate chicken in lemon, oil, and oregano 20 min. Thread onto skewers and grill 4 min per side." },
+  { id:11, veg:false, name:"Tuna Avocado Bowl", calories:400,
+    ingredients:["2 cans tuna, drained","1 avocado, diced","2 tbsp lime juice","1/4 cup chopped cilantro"],
+    instructions:"Flake tuna into a bowl and fold in avocado, lime juice, and cilantro. Season and serve chilled." },
+  { id:12, veg:true, name:"Mango Black Bean Salad", calories:260,
+    ingredients:["1 ripe mango, diced","1 can black beans, rinsed","2 tbsp lime juice","1/4 cup chopped cilantro"],
+    instructions:"Combine mango and black beans. Toss with lime juice and cilantro, rest 10 minutes before serving." },
+  { id:13, veg:true, name:"Summer Corn on the Cob", calories:200,
+    ingredients:["4 ears fresh corn, husked","3 tbsp butter, melted","1/2 tsp sea salt","1/4 tsp cracked pepper"],
+    instructions:"Boil corn 4 min or grill 8 min, turning. Brush with butter and season with salt and pepper." },
+  { id:14, veg:true, name:"Tomato Bruschetta", calories:300,
+    ingredients:["4 slices crusty bread","2 cups diced tomatoes","1/4 cup chopped basil","1 garlic clove"],
+    instructions:"Toast bread and rub with cut garlic. Mix tomatoes with basil and salt, then spoon over toasts." },
+  { id:15, veg:true, name:"Cold Gazpacho", calories:150,
+    ingredients:["4 large ripe tomatoes","1 cucumber, peeled","1 red bell pepper","3 tbsp olive oil"],
+    instructions:"Blend all ingredients smooth, adding water if needed. Chill 2 hours and serve with a drizzle of oil." },
+  { id:16, veg:false, name:"Melon & Prosciutto", calories:200,
+    ingredients:["1/2 cantaloupe, cubed","4 oz prosciutto, thinly sliced","10 fresh mint leaves","1 tbsp lime juice"],
+    instructions:"Wrap each melon cube with prosciutto. Arrange on a platter, scatter mint, and squeeze lime over top." },
+  { id:17, veg:true, name:"Simple Greek Salad", calories:300,
+    ingredients:["2 cucumbers, chopped","2 tomatoes, chopped","1/2 cup kalamata olives","1/2 cup crumbled feta"],
+    instructions:"Combine cucumbers, tomatoes, and olives. Top with feta and drizzle olive oil with a pinch of oregano." },
+  { id:18, veg:false, name:"Grilled Lemon Salmon", calories:450,
+    ingredients:["4 salmon fillets (5 oz each)","2 lemons, sliced","2 tbsp olive oil","1 tbsp fresh dill"],
+    instructions:"Brush salmon with oil. Grill skin-side down 4–5 min, flip 2 min more. Top with lemon slices and dill." },
+  { id:19, veg:true, name:"Zucchini Noodles with Pesto", calories:350,
+    ingredients:["3 medium zucchini, spiralized","1/3 cup basil pesto","1 cup cherry tomatoes, halved","2 tbsp grated parmesan"],
+    instructions:"Toss raw zucchini noodles with pesto. Fold in tomatoes, top with parmesan, and serve immediately." },
+  { id:20, veg:true, name:"Berry Smoothie Bowl", calories:400,
+    ingredients:["1.5 cups frozen mixed berries","1 banana","1/2 cup Greek yogurt","1/4 cup granola"],
+    instructions:"Blend berries, banana, and yogurt until thick and smooth. Pour into a bowl and top with granola." },
+  { id:21, veg:true, name:"Cool Cucumber Yogurt Soup", calories:150,
+    ingredients:["2 cucumbers, peeled and chopped","1.5 cups plain yogurt","2 tbsp fresh dill","1 garlic clove"],
+    instructions:"Blend everything until silky. Chill 1 hour, then ladle into bowls with extra dill on top." },
+  { id:22, veg:false, name:"Grilled Shrimp Tacos", calories:400,
+    ingredients:["1 lb shrimp, peeled","6 small corn tortillas","2 cups shredded cabbage","3 tbsp lime juice"],
+    instructions:"Grill shrimp 2 min per side. Warm tortillas, fill with shrimp and cabbage, squeeze lime over." },
+  { id:23, veg:true, name:"Chickpea Cucumber Salad", calories:350,
+    ingredients:["1 can chickpeas, rinsed","2 cucumbers, diced","1/2 cup crumbled feta","3 tbsp lemon vinaigrette"],
+    instructions:"Combine chickpeas, cucumbers, and feta. Toss with vinaigrette and marinate 15 minutes before serving." },
+  { id:24, veg:true, name:"Peach Burrata Salad", calories:400,
+    ingredients:["2 ripe peaches, sliced","4 oz burrata","2 cups arugula","2 tbsp balsamic glaze"],
+    instructions:"Arrange peaches and arugula on a platter. Tear burrata over top and drizzle with balsamic glaze." },
+  { id:25, veg:true, name:"Tomato Mozzarella Flatbread", calories:500,
+    ingredients:["1 pre-baked flatbread","6 oz fresh mozzarella, sliced","2 tomatoes, sliced","1/4 cup basil leaves"],
+    instructions:"Top flatbread with mozzarella and tomatoes. Bake at 425°F 8 min until cheese melts. Scatter basil." },
+  { id:26, veg:true, name:"Avocado Egg Toast", calories:400,
+    ingredients:["2 slices whole-grain bread","1 avocado","2 eggs","1/4 tsp red chili flakes"],
+    instructions:"Fry or poach eggs. Toast bread, spread with mashed avocado, top with egg and chili flakes." },
+  { id:27, veg:true, name:"Grilled Veggie Skewers", calories:200,
+    ingredients:["2 zucchini, sliced","2 bell peppers, chunked","1 red onion, wedged","3 tbsp olive oil"],
+    instructions:"Toss vegetables with oil and salt, thread onto skewers. Grill 10 min on medium-high, turning." },
+  { id:28, veg:true, name:"Strawberry Ricotta Toast", calories:300,
+    ingredients:["2 slices brioche","1/2 cup ricotta","1 cup sliced strawberries","2 tsp honey"],
+    instructions:"Toast brioche lightly. Spread with ricotta, pile on strawberries, and drizzle with honey." },
+  { id:29, veg:true, name:"Tropical Fruit Salad", calories:200,
+    ingredients:["2 cups pineapple chunks","1 mango, diced","2 kiwis, sliced","2 tbsp lime juice"],
+    instructions:"Toss all fruit in a bowl and squeeze lime juice over top. Chill 15 minutes before serving." },
+  { id:30, veg:false, name:"Mediterranean Tuna Salad", calories:350,
+    ingredients:["2 cans tuna, drained","1/2 cup kalamata olives","2 tomatoes, chopped","3 tbsp olive oil"],
+    instructions:"Flake tuna and fold in olives, tomatoes, and olive oil. Season and serve on greens or bread." },
+  { id:31, veg:true, name:"Watermelon Cucumber Salad", calories:200,
+    ingredients:["3 cups cubed watermelon","2 cucumbers, sliced","1/2 cup crumbled feta","1/4 cup fresh mint"],
+    instructions:"Combine watermelon and cucumber. Top with feta and mint, toss gently, and serve cold." },
+  { id:32, veg:false, name:"Grilled Chicken Caesar", calories:450,
+    ingredients:["2 grilled chicken breasts, sliced","1 head romaine, chopped","1/4 cup shaved parmesan","3 tbsp Caesar dressing"],
+    instructions:"Toss romaine with dressing. Top with sliced chicken and shaved parmesan." },
+  { id:33, veg:true, name:"Asian Cucumber Salad", calories:110,
+    ingredients:["3 cucumbers, thinly sliced","2 tsp toasted sesame oil","1 tbsp rice vinegar","1 tsp sesame seeds"],
+    instructions:"Toss cucumbers with sesame oil and vinegar. Sprinkle with seeds and chill 20 minutes." },
+  { id:34, veg:true, name:"Quick Tomato Basil Soup", calories:250,
+    ingredients:["1 can (28 oz) crushed tomatoes","1/2 cup heavy cream","1/4 cup fresh basil","1 garlic clove, minced"],
+    instructions:"Simmer tomatoes and garlic 10 min. Stir in cream and basil, blend until smooth, and season." },
+  { id:35, veg:false, name:"Baked Cod with Lemon", calories:300,
+    ingredients:["4 cod fillets (5 oz each)","1 lemon, sliced","2 tbsp olive oil","2 tbsp chopped parsley"],
+    instructions:"Place cod on a sheet pan, drizzle oil, top with lemon. Bake 400°F 12 min, scatter parsley." },
+  { id:36, veg:true, name:"Portobello Burger", calories:450,
+    ingredients:["2 portobello caps","2 burger buns","1 tomato, sliced","1/2 avocado, sliced"],
+    instructions:"Grill portobello caps 4 min per side. Toast buns and stack with mushroom, tomato, and avocado." },
+  { id:37, veg:true, name:"Summer Veggie Wrap", calories:400,
+    ingredients:["2 large tortillas","1/2 cup hummus","1 cucumber, sliced","1 tomato, sliced"],
+    instructions:"Spread hummus on each tortilla. Layer cucumber and tomato, roll tightly, and slice in half." },
+  { id:38, veg:false, name:"Citrus Shrimp Salad", calories:350,
+    ingredients:["1 lb cooked shrimp","4 cups arugula","1 orange, segmented","3 tbsp olive oil"],
+    instructions:"Toss arugula with oil and salt. Top with shrimp and orange segments and serve immediately." },
+  { id:39, veg:true, name:"Blueberry Goat Cheese Salad", calories:300,
+    ingredients:["4 cups mixed greens","1 cup fresh blueberries","1/4 cup crumbled goat cheese","3 tbsp balsamic vinaigrette"],
+    instructions:"Toss greens with vinaigrette. Top with blueberries and goat cheese and serve." },
+  { id:40, veg:false, name:"Chicken Lettuce Wraps", calories:400,
+    ingredients:["1 lb ground chicken, cooked","1 head butter lettuce","3 tbsp hoisin sauce","1/4 cup sliced green onion"],
+    instructions:"Stir hoisin into warm chicken. Spoon into lettuce leaves and top with green onion." },
+  { id:41, veg:false, name:"Grilled Pineapple Chicken", calories:450,
+    ingredients:["1 lb chicken breast","1 cup pineapple chunks","3 tbsp soy sauce","1 tsp grated ginger"],
+    instructions:"Marinate chicken in soy and ginger 20 min. Grill 5 min per side, adding pineapple last 4 min." },
+  { id:42, veg:true, name:"Cucumber Dill Tea Sandwich", calories:300,
+    ingredients:["4 slices soft white bread","4 tbsp cream cheese","1 cucumber, thinly sliced","1 tbsp fresh dill"],
+    instructions:"Spread cream cheese on each slice. Layer cucumber, sprinkle dill, top with bread, cut into triangles." },
+  { id:43, veg:false, name:"Mango Shrimp Salad", calories:400,
+    ingredients:["1 lb cooked shrimp","1 mango, diced","1 avocado, diced","2 tbsp lime juice"],
+    instructions:"Combine shrimp, mango, and avocado. Drizzle lime juice, season lightly, and serve over greens." },
+  { id:44, veg:false, name:"Turkey Avocado Lettuce Wrap", calories:300,
+    ingredients:["8 oz sliced deli turkey","1 head butter lettuce","1 avocado, sliced","1 tomato, sliced"],
+    instructions:"Lay turkey in large lettuce leaves. Top with avocado and tomato, roll, and serve." },
+  { id:45, veg:false, name:"BLT Avocado Toast", calories:500,
+    ingredients:["2 slices sourdough","4 strips cooked bacon","1/2 avocado","2 lettuce leaves"],
+    instructions:"Toast sourdough. Spread with mashed avocado, top with lettuce and bacon. Serve immediately." },
+  { id:46, veg:false, name:"Greek Chicken Bowl", calories:500,
+    ingredients:["2 grilled chicken breasts, sliced","1 cucumber, diced","1/2 cup crumbled feta","3 tbsp olive oil"],
+    instructions:"Divide chicken, cucumber, and feta between bowls. Drizzle with oil and a pinch of oregano." },
+  { id:47, veg:true, name:"Strawberry Mint Salad", calories:150,
+    ingredients:["3 cups sliced strawberries","1/4 cup fresh mint","1 tbsp honey","1 tbsp lemon juice"],
+    instructions:"Toss strawberries with honey and lemon. Rest 10 min, fold in torn mint just before serving." },
+  { id:48, veg:true, name:"Pesto Pasta Salad", calories:500,
+    ingredients:["8 oz cooked pasta, cooled","1/3 cup basil pesto","1 cup halved cherry tomatoes","4 oz mozzarella pearls"],
+    instructions:"Toss pasta with pesto until coated. Fold in tomatoes and mozzarella and chill 15 min." },
+  { id:49, veg:true, name:"Grilled Veggie Hummus Wrap", calories:450,
+    ingredients:["1 large tortilla","1/3 cup hummus","1 cup grilled veggies","2 tbsp crumbled feta"],
+    instructions:"Spread hummus on tortilla. Add grilled veggies and feta, roll tightly, and slice on the bias." },
+  { id:50, veg:true, name:"Frozen Yogurt Berry Bark", calories:250,
+    ingredients:["2 cups Greek yogurt","2 tbsp honey","1 cup mixed berries","1/4 cup granola"],
+    instructions:"Stir honey into yogurt and spread on a lined sheet. Scatter berries and granola, freeze 3 hours, break into pieces." },
+  { id:51, veg:true, name:"Arugula Parmesan Salad", calories:180,
+    ingredients:["4 cups arugula","1/4 cup shaved parmesan","2 tbsp lemon juice","2 tbsp olive oil"],
+    instructions:"Toss arugula with lemon juice and olive oil. Top with shaved parmesan and a pinch of black pepper." },
+  { id:52, veg:true, name:"Apple Walnut Salad", calories:290,
+    ingredients:["4 cups mixed greens","1 apple, thinly sliced","1/3 cup walnuts","1/4 cup crumbled blue cheese"],
+    instructions:"Arrange greens and apple slices in a bowl. Scatter walnuts and blue cheese, drizzle with vinaigrette." },
+  { id:53, veg:true, name:"Beet Goat Cheese Salad", calories:250,
+    ingredients:["3 medium beets, roasted and sliced","3 oz goat cheese, crumbled","3 cups arugula","2 tbsp balsamic glaze"],
+    instructions:"Arrange arugula on a platter. Top with beet slices and goat cheese, drizzle with balsamic glaze." },
+  { id:54, veg:true, name:"Edamame Corn Salad", calories:280,
+    ingredients:["1.5 cups shelled edamame, cooked","1 cup corn kernels","1/4 red onion, diced","3 tbsp lime vinaigrette"],
+    instructions:"Combine edamame, corn, and onion in a bowl. Toss with lime vinaigrette and chill before serving." },
+  { id:55, veg:true, name:"Kale Caesar Salad", calories:320,
+    ingredients:["4 cups chopped kale","3 tbsp Caesar dressing","1/4 cup shaved parmesan","1/2 cup croutons"],
+    instructions:"Massage dressing into kale until tender. Top with parmesan and croutons and toss gently." },
+  { id:56, veg:false, name:"Nectarine Prosciutto Salad", calories:280,
+    ingredients:["2 nectarines, sliced","4 oz prosciutto","3 cups arugula","1 tbsp honey"],
+    instructions:"Arrange arugula, nectarine slices, and torn prosciutto on a platter. Drizzle honey over top." },
+  { id:57, veg:true, name:"Quinoa Cucumber Salad", calories:350,
+    ingredients:["1.5 cups cooked quinoa","2 cucumbers, diced","1/2 cup crumbled feta","3 tbsp lemon vinaigrette"],
+    instructions:"Mix quinoa with cucumber and feta. Toss with lemon vinaigrette and chill 15 min before serving." },
+  { id:58, veg:true, name:"Mango Avocado Salad", calories:280,
+    ingredients:["1 large mango, diced","1 avocado, diced","1/4 red onion, thinly sliced","2 tbsp lime juice"],
+    instructions:"Gently toss mango, avocado, and onion. Squeeze lime juice over and season with salt." },
+  { id:59, veg:true, name:"Fennel Orange Salad", calories:200,
+    ingredients:["1 fennel bulb, thinly shaved","2 oranges, segmented","1/4 cup kalamata olives","2 tbsp olive oil"],
+    instructions:"Arrange fennel and orange segments on a plate. Scatter olives and drizzle with olive oil." },
+  { id:60, veg:false, name:"Fig Prosciutto Salad", calories:280,
+    ingredients:["4 fresh figs, halved","3 oz prosciutto","3 cups arugula","2 tbsp balsamic glaze"],
+    instructions:"Arrange arugula, figs, and torn prosciutto. Drizzle generously with balsamic glaze." },
+  { id:61, veg:true, name:"Pear Gorgonzola Salad", calories:320,
+    ingredients:["4 cups mixed greens","1 pear, thinly sliced","1/4 cup crumbled gorgonzola","1/4 cup candied walnuts"],
+    instructions:"Toss greens with a light vinaigrette. Top with pear, gorgonzola, and candied walnuts." },
+  { id:62, veg:true, name:"Roasted Corn Avocado Salad", calories:290,
+    ingredients:["2 ears corn, grilled and cut off cob","1 avocado, diced","1 cup cherry tomatoes, halved","2 tbsp lime juice"],
+    instructions:"Combine corn, avocado, and tomatoes. Squeeze lime over and season with salt and pepper." },
+  { id:63, veg:true, name:"Shaved Brussels Salad", calories:260,
+    ingredients:["3 cups shaved Brussels sprouts","1/4 cup shaved parmesan","1/4 cup toasted almonds","3 tbsp lemon vinaigrette"],
+    instructions:"Toss shaved Brussels with lemon vinaigrette. Top with parmesan and almonds." },
+  { id:64, veg:false, name:"Smoked Salmon Cucumber Salad", calories:280,
+    ingredients:["4 oz smoked salmon","2 cucumbers, sliced","2 tbsp capers","3 tbsp cream cheese dressing"],
+    instructions:"Arrange cucumbers on a platter. Top with smoked salmon and capers, drizzle with dressing." },
+  { id:65, veg:false, name:"Spinach Bacon Salad", calories:380,
+    ingredients:["4 cups baby spinach","4 strips bacon, cooked and crumbled","2 hard-boiled eggs, sliced","3 tbsp balsamic dressing"],
+    instructions:"Arrange spinach in a bowl. Top with bacon and egg slices, then drizzle with dressing." },
+  { id:66, veg:true, name:"Warm Lentil Salad", calories:320,
+    ingredients:["1.5 cups cooked green lentils","1 cup cherry tomatoes, halved","1/2 cup crumbled feta","2 tbsp olive oil"],
+    instructions:"Toss warm lentils with tomatoes and olive oil. Top with feta and season with salt and pepper." },
+  { id:67, veg:true, name:"Zucchini Ribbon Salad", calories:180,
+    ingredients:["3 zucchini, peeled into ribbons","1/4 cup shaved parmesan","2 tbsp lemon juice","2 tbsp fresh mint"],
+    instructions:"Use a peeler to make zucchini ribbons. Toss with lemon juice, top with parmesan and mint." },
+  { id:68, veg:false, name:"Cobb Salad Bowl", calories:480,
+    ingredients:["2 grilled chicken breasts, sliced","1 avocado, diced","4 strips cooked bacon","2 cups cherry tomatoes"],
+    instructions:"Arrange chicken, avocado, bacon, and tomatoes over romaine. Drizzle with ranch or blue cheese dressing." },
+  { id:69, veg:true, name:"Avocado Tuna Melt", calories:490,
+    ingredients:["2 slices sourdough","2 cans tuna, drained","1 avocado, sliced","1/2 cup shredded cheddar"],
+    instructions:"Mix tuna with mayo and pile onto bread. Top with avocado and cheddar. Broil until cheese melts." },
+  { id:70, veg:false, name:"Chicken Pesto Panini", calories:520,
+    ingredients:["1 ciabatta roll, split","1 grilled chicken breast, sliced","2 tbsp basil pesto","2 oz fresh mozzarella, sliced"],
+    instructions:"Spread pesto on ciabatta, layer chicken and mozzarella. Press in a panini press or skillet until golden." },
+  { id:71, veg:true, name:"Egg Salad Sandwich", calories:420,
+    ingredients:["4 hard-boiled eggs, chopped","3 tbsp mayonnaise","2 slices whole-grain bread","1 romaine leaf"],
+    instructions:"Mix eggs with mayo and season with salt and pepper. Pile onto bread with a romaine leaf." },
+  { id:72, veg:true, name:"Grilled Veggie Panini", calories:450,
+    ingredients:["1 focaccia roll, split","1/2 cup roasted red peppers","4 oz fresh mozzarella, sliced","5 basil leaves"],
+    instructions:"Layer peppers, mozzarella, and basil on focaccia. Press in panini press or skillet 3 min per side." },
+  { id:73, veg:false, name:"Ham Swiss Croissant", calories:520,
+    ingredients:["2 large croissants, split","4 oz sliced ham","4 slices Swiss cheese","2 tsp Dijon mustard"],
+    instructions:"Spread Dijon on croissants, layer ham and Swiss. Toast in oven at 375°F for 8 min." },
+  { id:74, veg:true, name:"Hummus Veggie Pita", calories:420,
+    ingredients:["2 pita rounds","1/2 cup hummus","1 cup roasted veggies","1/4 cup crumbled feta"],
+    instructions:"Spread hummus inside pita, fill with roasted veggies and feta." },
+  { id:75, veg:false, name:"BLT Wrap", calories:400,
+    ingredients:["1 large tortilla","4 strips cooked bacon","2 romaine leaves","1 tomato, sliced"],
+    instructions:"Layer bacon, lettuce, and tomato on tortilla. Add mayo if desired, roll tightly, and slice." },
+  { id:76, veg:true, name:"Caprese Grilled Cheese", calories:480,
+    ingredients:["2 slices sourdough","4 oz fresh mozzarella, sliced","1 tomato, sliced","5 fresh basil leaves"],
+    instructions:"Layer mozzarella, tomato, and basil between bread. Grill in buttered pan until golden on both sides." },
+  { id:77, veg:true, name:"Chickpea Salad Sandwich", calories:380,
+    ingredients:["1 can chickpeas, rinsed and mashed","3 tbsp mayo or Greek yogurt","2 slices whole-grain bread","1 celery stalk, diced"],
+    instructions:"Mix mashed chickpeas with mayo and celery. Season and spread on bread." },
+  { id:78, veg:false, name:"Crab Avocado Toast", calories:420,
+    ingredients:["2 slices sourdough","4 oz lump crab meat","1 avocado, mashed","1 tbsp lemon juice"],
+    instructions:"Toast bread and spread with mashed avocado. Top with crab meat and a squeeze of lemon." },
+  { id:79, veg:true, name:"Mediterranean Wrap", calories:380,
+    ingredients:["1 large tortilla","1/3 cup hummus","1/3 cup kalamata olives","1 cucumber, sliced"],
+    instructions:"Spread hummus on tortilla, layer olives and cucumber. Roll tightly and slice in half." },
+  { id:80, veg:false, name:"Roast Beef Arugula Wrap", calories:450,
+    ingredients:["1 large tortilla","6 oz sliced roast beef","2 cups arugula","2 tbsp horseradish cream"],
+    instructions:"Spread horseradish cream on tortilla, layer roast beef and arugula. Roll and slice." },
+  { id:81, veg:false, name:"Turkey Cranberry Wrap", calories:420,
+    ingredients:["1 large tortilla","6 oz sliced turkey","2 tbsp cranberry sauce","2 cups baby spinach"],
+    instructions:"Spread cranberry sauce on tortilla, layer turkey and spinach. Roll tightly and slice." },
+  { id:82, veg:true, name:"Veggie Quesadilla", calories:420,
+    ingredients:["2 large tortillas","1/2 cup black beans, mashed","1/2 cup corn kernels","1 cup shredded cheese"],
+    instructions:"Layer beans, corn, and cheese between tortillas. Cook in dry pan 3 min per side until golden." },
+  { id:83, veg:true, name:"Smashed White Bean Toast", calories:360,
+    ingredients:["2 slices crusty bread","1 can white beans, drained","1 tbsp lemon juice","2 tbsp fresh herbs (rosemary or thyme)"],
+    instructions:"Mash beans with lemon juice and herbs. Toast bread and pile bean mixture on top." },
+  { id:84, veg:false, name:"Shrimp Po'Boy", calories:480,
+    ingredients:["8 oz cooked shrimp","1 hoagie roll, split","2 romaine leaves","3 tbsp remoulade sauce"],
+    instructions:"Toast roll and spread with remoulade. Layer lettuce and shrimp inside and serve." },
+  { id:85, veg:true, name:"PB Banana Wrap", calories:490,
+    ingredients:["1 large tortilla","3 tbsp peanut butter","1 banana","1 tsp honey"],
+    instructions:"Spread peanut butter on tortilla, place whole banana on edge, drizzle honey. Roll up tightly." },
+  { id:86, veg:false, name:"Salmon Cream Cheese Bagel", calories:520,
+    ingredients:["1 bagel, sliced","3 tbsp cream cheese","3 oz smoked salmon","1 tbsp capers"],
+    instructions:"Toast bagel and spread with cream cheese. Top with smoked salmon and capers." },
+  { id:87, veg:true, name:"Black Bean Soup", calories:280,
+    ingredients:["2 cans black beans","1 can diced tomatoes","1 tsp cumin","2 cups vegetable broth"],
+    instructions:"Combine all ingredients in a pot. Simmer 15 min, blend half the soup for a creamy texture." },
+  { id:88, veg:true, name:"Broccoli Cheddar Soup", calories:380,
+    ingredients:["3 cups broccoli florets","2 cups chicken or veg broth","1 cup shredded cheddar","1/2 cup heavy cream"],
+    instructions:"Cook broccoli in broth 10 min. Blend partially, stir in cream and cheddar until melted." },
+  { id:89, veg:true, name:"Butternut Squash Soup", calories:280,
+    ingredients:["1 butternut squash, roasted","1 can coconut milk","1 tsp fresh ginger, grated","2 cups vegetable broth"],
+    instructions:"Blend roasted squash with broth, coconut milk, and ginger. Heat and season with salt." },
+  { id:90, veg:true, name:"Carrot Ginger Soup", calories:240,
+    ingredients:["1 lb carrots, chopped","1 can coconut milk","1 tbsp fresh ginger, grated","3 cups vegetable broth"],
+    instructions:"Simmer carrots in broth 20 min. Add coconut milk and ginger, blend smooth, and season." },
+  { id:91, veg:false, name:"Chicken Noodle Soup", calories:380,
+    ingredients:["2 chicken breasts, shredded","2 cups egg noodles","2 carrots, sliced","4 cups chicken broth"],
+    instructions:"Simmer broth with carrots 10 min. Add noodles and cook 8 min more. Stir in chicken and season." },
+  { id:92, veg:true, name:"Creamy Mushroom Soup", calories:320,
+    ingredients:["1 lb mixed mushrooms, sliced","2 cups vegetable broth","1/2 cup heavy cream","2 garlic cloves, minced"],
+    instructions:"Sauté mushrooms and garlic 8 min. Add broth, simmer 10 min, blend partially, stir in cream." },
+  { id:93, veg:true, name:"Pea Mint Soup", calories:200,
+    ingredients:["2 cups frozen peas","2 cups vegetable broth","2 tbsp fresh mint","3 tbsp Greek yogurt"],
+    instructions:"Blend peas, broth, and mint until smooth. Serve warm or chilled with a swirl of yogurt." },
+  { id:94, veg:true, name:"Pumpkin Soup", calories:240,
+    ingredients:["1 can (15 oz) pumpkin purée","1 can coconut milk","1 tsp curry powder","2 cups vegetable broth"],
+    instructions:"Whisk all ingredients in a pot. Simmer 10 min, season with salt, and serve with crusty bread." },
+  { id:95, veg:true, name:"Sweet Potato Soup", calories:280,
+    ingredients:["2 large sweet potatoes, roasted","1 can coconut milk","1 tsp fresh ginger","2 cups vegetable broth"],
+    instructions:"Blend roasted sweet potato with broth, coconut milk, and ginger. Heat and season to taste." },
+  { id:96, veg:true, name:"White Bean Tomato Soup", calories:300,
+    ingredients:["1 can white beans, drained","1 can (28 oz) crushed tomatoes","2 garlic cloves, minced","1/4 cup fresh basil"],
+    instructions:"Simmer tomatoes and garlic 10 min. Add beans and basil, cook 5 min more, and season." },
+  { id:97, veg:false, name:"Corn Chowder", calories:420,
+    ingredients:["3 ears corn, kernels cut off","2 cups chicken broth","1 cup heavy cream","3 strips bacon, cooked and crumbled"],
+    instructions:"Cook corn in broth 8 min. Add cream and simmer 5 min. Top each bowl with bacon crumbles." },
+  { id:98, veg:false, name:"BBQ Beef Skewers", calories:480,
+    ingredients:["1 lb beef sirloin, cubed","2 bell peppers, chunked","1 red onion, wedged","1/3 cup BBQ sauce"],
+    instructions:"Toss beef and veggies in BBQ sauce. Thread onto skewers and grill 10 min, turning, until cooked." },
+  { id:99, veg:true, name:"Grilled Asparagus", calories:150,
+    ingredients:["1 lb asparagus, trimmed","2 tbsp olive oil","1 lemon, zested and juiced","2 tbsp shaved parmesan"],
+    instructions:"Toss asparagus in oil and grill 5 min, turning once. Finish with lemon juice and parmesan." },
+  { id:100, veg:false, name:"Grilled Chicken Thighs", calories:450,
+    ingredients:["4 bone-in chicken thighs","2 tbsp olive oil","3 garlic cloves, minced","1 tbsp fresh rosemary"],
+    instructions:"Mix oil, garlic, and rosemary. Coat chicken and grill 6 min per side until cooked through." },
+  { id:101, veg:true, name:"Grilled Corn Elotes", calories:320,
+    ingredients:["4 ears corn, husked","3 tbsp mayonnaise","1/2 cup cotija cheese, crumbled","1 tsp chili powder"],
+    instructions:"Grill corn 8 min, turning. Brush with mayo and roll in cotija. Dust with chili powder." },
+  { id:102, veg:true, name:"Grilled Eggplant with Yogurt", calories:180,
+    ingredients:["1 large eggplant, sliced","1 cup plain yogurt","2 garlic cloves, minced","2 tbsp fresh mint"],
+    instructions:"Grill eggplant slices 4 min per side. Serve on a pool of garlicky yogurt, topped with mint." },
+  { id:103, veg:false, name:"Grilled Flank Steak", calories:380,
+    ingredients:["1.5 lb flank steak","3 tbsp soy sauce","2 garlic cloves, minced","2 tbsp lime juice"],
+    instructions:"Marinate steak in soy, garlic, and lime 30 min. Grill 4 min per side, rest 5 min, then slice thin." },
+  { id:104, veg:true, name:"Grilled Halloumi", calories:380,
+    ingredients:["8 oz halloumi, sliced","2 cups cubed watermelon","1/4 cup fresh mint","1 tbsp lime juice"],
+    instructions:"Grill halloumi slices 2 min per side until golden. Serve alongside watermelon and mint with lime." },
+  { id:105, veg:false, name:"Grilled Lamb Chops", calories:520,
+    ingredients:["4 lamb chops","2 tbsp fresh rosemary, chopped","3 garlic cloves, minced","2 tbsp olive oil"],
+    instructions:"Rub chops with rosemary, garlic, and oil. Grill 4 min per side for medium-rare." },
+  { id:106, veg:false, name:"Grilled Mahi Mahi", calories:320,
+    ingredients:["4 mahi mahi fillets","2 tbsp lime juice","2 tbsp fresh cilantro","2 tbsp olive oil"],
+    instructions:"Brush fish with oil and lime. Grill 4 min per side until flaky. Top with cilantro." },
+  { id:107, veg:true, name:"Grilled Romaine Caesar", calories:280,
+    ingredients:["2 romaine hearts, halved","3 tbsp Caesar dressing","1/4 cup shaved parmesan","1/2 cup croutons"],
+    instructions:"Grill romaine cut-side down 2 min. Top with Caesar dressing, parmesan, and croutons." },
+  { id:108, veg:false, name:"Grilled Swordfish", calories:420,
+    ingredients:["4 swordfish steaks","1 lemon, sliced","2 tbsp capers","2 tbsp butter"],
+    instructions:"Grill swordfish 4 min per side. Top with lemon, capers, and a pat of butter to melt over." },
+  { id:109, veg:false, name:"Grilled Turkey Burger", calories:480,
+    ingredients:["1 lb ground turkey","2 burger buns","1 avocado, sliced","1 tomato, sliced"],
+    instructions:"Form turkey into patties, season, grill 5 min per side. Build burgers with avocado and tomato." },
+  { id:110, veg:false, name:"Herb Grilled Pork Chops", calories:450,
+    ingredients:["4 boneless pork chops","2 tbsp fresh rosemary","3 garlic cloves, minced","2 tbsp olive oil"],
+    instructions:"Coat pork with rosemary, garlic, and oil. Grill 5 min per side until cooked through." },
+  { id:111, veg:false, name:"Honey Garlic Grilled Chicken", calories:400,
+    ingredients:["4 chicken breasts","3 tbsp honey","3 garlic cloves, minced","2 tbsp soy sauce"],
+    instructions:"Mix honey, garlic, and soy. Marinate chicken 20 min, grill 5 min per side, basting with marinade." },
+  { id:112, veg:false, name:"Lemon Herb Tilapia", calories:280,
+    ingredients:["4 tilapia fillets","1 lemon, sliced","2 tbsp olive oil","2 tbsp fresh mixed herbs"],
+    instructions:"Drizzle tilapia with oil and top with lemon slices. Bake 400°F 12 min, finish with herbs." },
+  { id:113, veg:true, name:"Spicy Grilled Tofu", calories:280,
+    ingredients:["1 block firm tofu, pressed and sliced","2 tbsp sriracha","2 tbsp soy sauce","1 tsp sesame oil"],
+    instructions:"Mix sriracha, soy, and sesame oil. Marinate tofu 30 min, grill 4 min per side until charred." },
+  { id:114, veg:false, name:"Teriyaki Salmon", calories:420,
+    ingredients:["4 salmon fillets","3 tbsp teriyaki sauce","1 tbsp sesame seeds","2 green onions, sliced"],
+    instructions:"Brush salmon with teriyaki. Grill or bake 400°F 12 min. Top with sesame seeds and green onion." },
+  { id:115, veg:true, name:"Grilled Zucchini Caprese", calories:250,
+    ingredients:["2 zucchini, sliced lengthwise","4 oz fresh mozzarella, sliced","1 tomato, sliced","2 tbsp balsamic glaze"],
+    instructions:"Grill zucchini 3 min per side. Top with mozzarella and tomato slices, drizzle balsamic glaze." },
+  { id:116, veg:false, name:"Grilled Chicken Caprese", calories:420,
+    ingredients:["2 chicken breasts, pounded flat","4 oz fresh mozzarella","2 tomatoes, sliced","1/4 cup fresh basil"],
+    instructions:"Grill chicken 5 min per side. Top each with mozzarella, tomato, and basil to finish." },
+  { id:117, veg:true, name:"Aglio e Olio", calories:480,
+    ingredients:["8 oz spaghetti, cooked","4 tbsp olive oil","4 garlic cloves, sliced","1/2 tsp red pepper flakes"],
+    instructions:"Toast garlic in oil with chili flakes 2 min. Toss with pasta and a splash of pasta water." },
+  { id:118, veg:false, name:"BLT Pasta Salad", calories:520,
+    ingredients:["8 oz rotini, cooked and cooled","6 strips bacon, cooked and crumbled","1 cup cherry tomatoes, halved","3 tbsp ranch dressing"],
+    instructions:"Toss pasta with dressing. Fold in bacon and tomatoes and chill before serving." },
+  { id:119, veg:true, name:"Brown Rice Buddha Bowl", calories:420,
+    ingredients:["1.5 cups cooked brown rice","1 cup shelled edamame","1 avocado, sliced","2 tbsp soy sauce"],
+    instructions:"Arrange rice, edamame, and avocado in a bowl. Drizzle with soy sauce and sesame oil." },
+  { id:120, veg:true, name:"Caprese Orzo Salad", calories:480,
+    ingredients:["8 oz orzo, cooked and cooled","4 oz mozzarella pearls","1 cup cherry tomatoes, halved","1/4 cup fresh basil"],
+    instructions:"Toss orzo with mozzarella and tomatoes. Add a drizzle of olive oil and torn basil." },
+  { id:121, veg:true, name:"Cheesy Polenta", calories:380,
+    ingredients:["1 cup polenta","1/2 cup grated parmesan","2 tbsp butter","3 cups water or broth"],
+    instructions:"Boil liquid and whisk in polenta. Cook 15 min, stirring often. Stir in butter and parmesan." },
+  { id:122, veg:true, name:"Couscous with Roasted Veggies", calories:380,
+    ingredients:["1.5 cups couscous, cooked","2 cups roasted mixed vegetables","1/2 cup crumbled feta","2 tbsp lemon juice"],
+    instructions:"Toss couscous with roasted veggies and lemon juice. Top with feta and season to taste." },
+  { id:123, veg:true, name:"Farro Mushroom Bowl", calories:420,
+    ingredients:["1.5 cups cooked farro","1 lb mushrooms, sautéed","1/4 cup grated parmesan","1 tsp fresh thyme"],
+    instructions:"Spoon warm mushrooms over farro. Top with parmesan and fresh thyme." },
+  { id:124, veg:true, name:"Greek Orzo Salad", calories:420,
+    ingredients:["8 oz orzo, cooked and cooled","1/2 cup crumbled feta","1/2 cup kalamata olives","1 cup cherry tomatoes, halved"],
+    instructions:"Mix orzo with feta, olives, and tomatoes. Toss with olive oil and lemon juice." },
+  { id:125, veg:true, name:"Lemon Pasta Primavera", calories:480,
+    ingredients:["8 oz pasta, cooked","1 cup asparagus, blanched and chopped","1 lemon, zested and juiced","1/3 cup grated parmesan"],
+    instructions:"Toss hot pasta with asparagus, lemon zest, and juice. Finish with parmesan." },
+  { id:126, veg:true, name:"Penne Arrabbiata", calories:420,
+    ingredients:["8 oz penne, cooked","1 can (28 oz) crushed tomatoes","3 garlic cloves, minced","1 tsp red pepper flakes"],
+    instructions:"Sauté garlic with chili flakes 1 min. Add tomatoes, simmer 15 min. Toss with pasta." },
+  { id:127, veg:true, name:"Quinoa Tabbouleh", calories:280,
+    ingredients:["1.5 cups cooked quinoa","1 cup fresh parsley, chopped","2 tomatoes, diced","3 tbsp lemon juice"],
+    instructions:"Combine quinoa, parsley, and tomatoes. Toss with lemon juice and olive oil, chill to serve." },
+  { id:128, veg:false, name:"Shrimp Scampi", calories:520,
+    ingredients:["1 lb shrimp, peeled","8 oz linguine, cooked","4 garlic cloves, sliced","4 tbsp butter"],
+    instructions:"Sauté garlic in butter 1 min. Add shrimp, cook 3 min. Toss with pasta and parsley." },
+  { id:129, veg:true, name:"Soba Noodle Salad", calories:380,
+    ingredients:["8 oz soba noodles, cooked and cooled","1 cup shelled edamame","1 cucumber, julienned","3 tbsp sesame ginger dressing"],
+    instructions:"Toss soba with edamame and cucumber. Drizzle with dressing and top with sesame seeds." },
+  { id:130, veg:false, name:"Tuna Pasta Salad", calories:480,
+    ingredients:["8 oz rotini, cooked and cooled","2 cans tuna, drained","1 cup frozen peas, thawed","3 tbsp mayonnaise"],
+    instructions:"Mix tuna, peas, and mayo into pasta. Season and chill at least 20 min before serving." },
+  { id:131, veg:false, name:"Lemon Shrimp Orzo", calories:450,
+    ingredients:["8 oz orzo, cooked","1 lb shrimp, cooked","1 lemon, zested and juiced","1/4 cup fresh parsley"],
+    instructions:"Toss warm orzo with shrimp, lemon zest, and juice. Finish with parsley and olive oil." },
+  { id:132, veg:false, name:"Chicken Pesto Pasta", calories:560,
+    ingredients:["8 oz penne, cooked","2 grilled chicken breasts, sliced","1/3 cup basil pesto","1/4 cup grated parmesan"],
+    instructions:"Toss pasta with pesto. Top with sliced chicken and parmesan." },
+  { id:133, veg:true, name:"Baked Eggs in Tomato Sauce", calories:300,
+    ingredients:["1 can (28 oz) crushed tomatoes","4 eggs","1/2 cup crumbled feta","1/4 cup fresh basil"],
+    instructions:"Simmer tomatoes in a skillet 5 min. Make wells and crack eggs in. Cover and cook 8 min. Top with feta and basil." },
+  { id:134, veg:true, name:"Caprese Frittata", calories:380,
+    ingredients:["6 eggs","4 oz fresh mozzarella, sliced","1 tomato, sliced","1/4 cup fresh basil"],
+    instructions:"Whisk eggs and pour into an oven-safe skillet. Top with mozzarella and tomato. Bake 375°F 15 min." },
+  { id:135, veg:true, name:"Egg White Veggie Scramble", calories:220,
+    ingredients:["6 egg whites","2 cups baby spinach","1 cup cherry tomatoes, halved","1/4 cup crumbled feta"],
+    instructions:"Scramble egg whites over medium heat. Add spinach and tomatoes, cook 2 min. Top with feta." },
+  { id:136, veg:false, name:"Ham & Cheese Frittata", calories:420,
+    ingredients:["6 eggs","4 oz diced ham","1/2 cup shredded cheddar","1/4 onion, diced"],
+    instructions:"Sauté onion and ham 3 min. Pour in whisked eggs, top with cheddar. Bake 375°F 12 min." },
+  { id:137, veg:true, name:"Mediterranean Scramble", calories:320,
+    ingredients:["4 eggs","1 cup baby spinach","1/4 cup crumbled feta","2 tbsp sun-dried tomatoes, chopped"],
+    instructions:"Scramble eggs over medium heat. Add spinach and sun-dried tomatoes, stir 1 min. Top with feta." },
+  { id:138, veg:true, name:"Shakshuka", calories:280,
+    ingredients:["1 can (28 oz) crushed tomatoes","4 eggs","1 bell pepper, diced","1 tsp cumin"],
+    instructions:"Simmer tomatoes with pepper and cumin 10 min. Crack eggs in, cover and cook 8 min." },
+  { id:139, veg:false, name:"Smoked Salmon Scramble", calories:380,
+    ingredients:["4 eggs","3 oz smoked salmon, flaked","2 tbsp cream cheese","1 tbsp fresh dill"],
+    instructions:"Scramble eggs gently. Fold in cream cheese and salmon in the last minute. Top with dill." },
+  { id:140, veg:true, name:"Spanish Tortilla", calories:380,
+    ingredients:["4 eggs","2 potatoes, thinly sliced","1 onion, sliced","3 tbsp olive oil"],
+    instructions:"Cook potatoes and onion in oil until tender. Mix in eggs and cook in pan until set on both sides." },
+  { id:141, veg:true, name:"Egg Fried Rice", calories:420,
+    ingredients:["2 cups cooked rice, cooled","3 eggs, beaten","3 tbsp soy sauce","3 green onions, sliced"],
+    instructions:"Stir-fry rice in a hot pan with oil. Push aside and scramble eggs, then mix together with soy sauce and onions." },
+  { id:142, veg:true, name:"Avocado Baked Eggs", calories:280,
+    ingredients:["2 avocados, halved and pitted","4 eggs","1/4 tsp red chili flakes","1 tbsp fresh chives"],
+    instructions:"Scoop a little avocado out of each half. Crack an egg into each hollow, bake 425°F 12 min." },
+  { id:143, veg:false, name:"Baked Shrimp with Garlic", calories:280,
+    ingredients:["1 lb large shrimp, peeled","4 garlic cloves, minced","3 tbsp butter","1 lemon, juiced"],
+    instructions:"Toss shrimp with butter, garlic, and lemon. Bake 400°F 10 min until pink and curled." },
+  { id:144, veg:false, name:"Ceviche", calories:220,
+    ingredients:["1 lb white fish (tilapia or sea bass), diced small","1/2 cup fresh lime juice","1/4 red onion, finely diced","1/4 cup fresh cilantro"],
+    instructions:"Toss fish in lime juice, refrigerate 20 min until opaque. Add onion and cilantro, season and serve." },
+  { id:145, veg:false, name:"Garlic Butter Scallops", calories:320,
+    ingredients:["1 lb sea scallops","3 tbsp butter","3 garlic cloves, minced","1 lemon, juiced"],
+    instructions:"Sear dry scallops in butter 2 min per side. Add garlic, cook 1 min. Finish with lemon juice." },
+  { id:146, veg:false, name:"Fish Tacos", calories:420,
+    ingredients:["1 lb tilapia fillets, grilled","6 corn tortillas","2 cups shredded cabbage","2 tbsp lime juice"],
+    instructions:"Grill tilapia, flake into pieces. Warm tortillas, fill with fish and cabbage. Squeeze lime over." },
+  { id:147, veg:false, name:"Lemon Butter Halibut", calories:380,
+    ingredients:["4 halibut fillets","3 tbsp butter","1 lemon, juiced","2 tbsp capers"],
+    instructions:"Sear halibut in butter 4 min per side. Remove fish, add lemon and capers to pan, pour over fish." },
+  { id:148, veg:false, name:"Miso Glazed Cod", calories:340,
+    ingredients:["4 cod fillets","3 tbsp white miso paste","2 tbsp mirin","1 tsp sesame seeds"],
+    instructions:"Mix miso with mirin and brush over cod. Broil 8 min until caramelized. Top with sesame seeds." },
+  { id:149, veg:false, name:"Poke Bowl", calories:480,
+    ingredients:["8 oz sushi-grade tuna, cubed","1.5 cups cooked rice","1 avocado, sliced","3 tbsp soy sauce"],
+    instructions:"Marinate tuna in soy sauce 10 min. Serve over rice with avocado slices." },
+  { id:150, veg:false, name:"Seared Ahi Tuna", calories:320,
+    ingredients:["2 ahi tuna steaks","3 tbsp sesame seeds","2 tbsp soy sauce","1 tsp fresh ginger, grated"],
+    instructions:"Coat tuna in sesame seeds. Sear in a very hot pan 1 min per side. Serve with soy-ginger dipping sauce." },
+  { id:151, veg:false, name:"Shrimp Avocado Salad", calories:320,
+    ingredients:["1 lb cooked shrimp","1 avocado, diced","2 tbsp lime juice","1/4 cup fresh cilantro"],
+    instructions:"Toss shrimp with avocado, lime juice, and cilantro. Season and serve chilled." },
+  { id:152, veg:false, name:"Tuna Niçoise Salad", calories:380,
+    ingredients:["2 cans tuna, drained","2 cups green beans, blanched","1/2 cup kalamata olives","3 hard-boiled eggs, halved"],
+    instructions:"Arrange tuna, green beans, olives, and eggs on a platter. Drizzle with vinaigrette." },
+  { id:153, veg:false, name:"Prawn Cocktail", calories:220,
+    ingredients:["1 lb cooked prawns","1/2 cup cocktail sauce","1 lemon, cut in wedges","4 romaine leaves"],
+    instructions:"Line glasses or a platter with romaine. Arrange prawns and serve with cocktail sauce and lemon." },
+  { id:154, veg:false, name:"Baked Lemon Herb Chicken", calories:380,
+    ingredients:["4 chicken breasts","1 lemon, sliced","2 tbsp olive oil","2 tbsp mixed fresh herbs"],
+    instructions:"Coat chicken in oil and season. Top with lemon slices and herbs. Bake 400°F 22 min." },
+  { id:155, veg:false, name:"Buffalo Chicken Lettuce Wraps", calories:380,
+    ingredients:["1 lb cooked chicken, shredded","3 tbsp buffalo sauce","1 head butter lettuce","2 tbsp blue cheese crumbles"],
+    instructions:"Toss chicken with buffalo sauce. Spoon into lettuce leaves and top with blue cheese." },
+  { id:156, veg:false, name:"Chicken Fajita Bowl", calories:520,
+    ingredients:["2 chicken breasts, grilled and sliced","2 bell peppers, grilled","1 onion, grilled","1.5 cups cooked rice"],
+    instructions:"Slice grilled chicken and peppers. Serve over rice with a squeeze of lime and salsa." },
+  { id:157, veg:false, name:"Chicken Shawarma Bowl", calories:480,
+    ingredients:["1 lb chicken thighs, spiced and grilled","1/2 cup hummus","1 cucumber, diced","1 tomato, diced"],
+    instructions:"Slice spiced grilled chicken. Serve over hummus with cucumber and tomato alongside." },
+  { id:158, veg:false, name:"Chicken Souvlaki", calories:360,
+    ingredients:["1 lb chicken breast, cubed","2 tbsp lemon juice","1 tsp dried oregano","2 tbsp olive oil"],
+    instructions:"Marinate chicken in lemon, oregano, and oil 30 min. Thread onto skewers and grill 4 min per side." },
+  { id:159, veg:false, name:"Garlic Butter Chicken", calories:380,
+    ingredients:["4 chicken breasts","4 tbsp butter","4 garlic cloves, minced","2 tbsp fresh parsley"],
+    instructions:"Cook chicken in butter 6 min per side. Add garlic, cook 2 min, then spoon over chicken. Top with parsley." },
+  { id:160, veg:false, name:"Honey Mustard Chicken", calories:380,
+    ingredients:["4 chicken breasts","3 tbsp honey","2 tbsp Dijon mustard","1 tbsp fresh rosemary"],
+    instructions:"Mix honey and mustard. Brush over chicken and bake 400°F 20 min, brushing once more halfway." },
+  { id:161, veg:false, name:"Orange Chicken Stir Fry", calories:420,
+    ingredients:["1 lb chicken breast, cubed","1/2 cup orange juice","3 tbsp soy sauce","1 tsp grated ginger"],
+    instructions:"Stir-fry chicken until golden. Add orange juice, soy, and ginger, simmer until sauce thickens." },
+  { id:162, veg:false, name:"Sesame Chicken", calories:380,
+    ingredients:["1 lb chicken breast, cubed","2 tbsp sesame oil","3 tbsp soy sauce","1 tbsp honey"],
+    instructions:"Mix sesame oil, soy, and honey. Stir-fry chicken, add sauce, and cook until caramelized." },
+  { id:163, veg:false, name:"Teriyaki Chicken Bowl", calories:520,
+    ingredients:["2 chicken breasts, grilled and sliced","1/4 cup teriyaki sauce","1.5 cups cooked rice","1 tbsp sesame seeds"],
+    instructions:"Brush chicken with teriyaki sauce and grill. Serve over rice, drizzle more sauce, and add sesame seeds." },
+  { id:164, veg:false, name:"Thai Basil Chicken", calories:380,
+    ingredients:["1 lb ground chicken","1 cup Thai basil leaves","2 tbsp fish sauce","3 garlic cloves, minced"],
+    instructions:"Cook chicken and garlic until done. Add fish sauce and basil, stir until wilted. Serve over rice." },
+  { id:165, veg:false, name:"Asian Beef Lettuce Cups", calories:420,
+    ingredients:["1 lb ground beef","3 tbsp hoisin sauce","1 tsp fresh ginger, grated","1 head butter lettuce"],
+    instructions:"Brown beef with ginger. Stir in hoisin and cook 2 min. Spoon into lettuce cups." },
+  { id:166, veg:false, name:"Beef & Broccoli", calories:420,
+    ingredients:["1 lb beef sirloin, thinly sliced","2 cups broccoli florets","3 tbsp soy sauce","1 tsp fresh ginger"],
+    instructions:"Stir-fry beef until browned, add broccoli and cook 3 min. Add soy sauce and ginger, toss to coat." },
+  { id:167, veg:false, name:"Cheeseburger Bowl", calories:480,
+    ingredients:["1 lb ground beef, cooked and seasoned","1 cup shredded cheddar","2 cups shredded lettuce","1 cup cherry tomatoes, halved"],
+    instructions:"Season and cook beef. Build bowls with lettuce, beef, cheddar, and tomatoes. Add condiments as desired." },
+  { id:168, veg:false, name:"Pork Tenderloin with Apple", calories:380,
+    ingredients:["1 pork tenderloin","2 apples, sliced","2 tbsp Dijon mustard","1 tbsp fresh rosemary"],
+    instructions:"Rub pork with mustard and rosemary. Roast at 400°F 25 min. Sauté apple slices to serve alongside." },
+  { id:169, veg:false, name:"Sausage & Pepper Skillet", calories:480,
+    ingredients:["4 Italian sausage links","2 bell peppers, sliced","1 onion, sliced","2 garlic cloves, minced"],
+    instructions:"Brown sausages in a skillet, slice, and set aside. Cook peppers and onion until tender. Combine." },
+  { id:170, veg:false, name:"Steak Fajitas", calories:520,
+    ingredients:["1 lb flank steak, grilled and sliced","2 bell peppers, grilled","1 onion, grilled","4 flour tortillas"],
+    instructions:"Slice grilled steak thin. Warm tortillas and fill with steak, peppers, and onion." },
+  { id:171, veg:false, name:"Thai Pork Lettuce Cups", calories:380,
+    ingredients:["1 lb ground pork","2 tbsp lime juice","2 tbsp fish sauce","1/4 cup fresh mint"],
+    instructions:"Brown pork and drain. Add lime juice and fish sauce. Cool slightly, toss with mint, spoon into lettuce." },
+  { id:172, veg:false, name:"Ham & Pineapple Skewers", calories:320,
+    ingredients:["8 oz cubed ham","1 cup pineapple chunks","1 bell pepper, chunked","2 tbsp honey glaze"],
+    instructions:"Thread ham, pineapple, and pepper onto skewers. Brush with glaze and grill 8 min, turning." },
+  { id:173, veg:false, name:"Bacon Wrapped Dates", calories:380,
+    ingredients:["16 Medjool dates, pitted","8 strips bacon, halved","2 oz goat cheese","1 sprig rosemary"],
+    instructions:"Stuff each date with a little goat cheese, wrap with bacon, and secure with a toothpick. Bake 400°F 15 min." },
+  { id:174, veg:true, name:"Crispy Chickpeas", calories:280,
+    ingredients:["2 cans chickpeas, drained and dried","2 tbsp olive oil","1 tsp cumin","1 tsp smoked paprika"],
+    instructions:"Toss chickpeas with oil and spices. Roast at 400°F 25 min, shaking halfway, until crispy." },
+  { id:175, veg:true, name:"Edamame with Sea Salt", calories:200,
+    ingredients:["2 cups frozen edamame in pods","1 tsp sea salt","1 tsp sesame oil","pinch of red pepper flakes"],
+    instructions:"Boil edamame 3 min and drain. Toss with sesame oil, salt, and chili flakes. Serve warm." },
+  { id:176, veg:true, name:"Fig & Brie Crostini", calories:380,
+    ingredients:["1 baguette, sliced and toasted","4 oz brie, sliced","3 tbsp fig jam","1/4 cup chopped walnuts"],
+    instructions:"Top toasted baguette slices with brie. Broil 2 min until melted. Add fig jam and walnuts." },
+  { id:177, veg:true, name:"Guacamole & Chips", calories:380,
+    ingredients:["2 ripe avocados","1 lime, juiced","1/4 cup fresh cilantro, chopped","tortilla chips for serving"],
+    instructions:"Mash avocados with lime juice and cilantro. Season with salt and serve with chips." },
+  { id:178, veg:true, name:"Pita with Tzatziki", calories:280,
+    ingredients:["2 pita rounds, cut into triangles","1 cup tzatziki","1 cucumber, sliced","1/4 cup fresh mint"],
+    instructions:"Arrange pita and cucumber around a bowl of tzatziki. Garnish with fresh mint." },
+  { id:179, veg:false, name:"Shrimp Cocktail", calories:220,
+    ingredients:["1 lb cooked jumbo shrimp","1/2 cup cocktail sauce","1 lemon, cut into wedges","1 tsp horseradish"],
+    instructions:"Stir horseradish into cocktail sauce. Arrange shrimp on ice with sauce and lemon wedges." },
+  { id:180, veg:false, name:"Smoked Salmon Crostini", calories:360,
+    ingredients:["1 baguette, sliced and toasted","4 oz cream cheese, softened","4 oz smoked salmon","1 tbsp fresh dill"],
+    instructions:"Spread cream cheese on toasted baguette, top with smoked salmon and a sprig of dill." },
+  { id:181, veg:true, name:"Spinach Artichoke Dip", calories:380,
+    ingredients:["1 cup frozen spinach, thawed and squeezed","1 can artichoke hearts, chopped","4 oz cream cheese","1/2 cup grated parmesan"],
+    instructions:"Mix all ingredients and spread in a baking dish. Bake 375°F 20 min until bubbly. Serve with bread." },
+  { id:182, veg:true, name:"White Bean Crostini", calories:280,
+    ingredients:["1 baguette, sliced and toasted","1 can white beans, drained and mashed","2 tbsp olive oil","1 tbsp fresh rosemary"],
+    instructions:"Mix beans with oil and rosemary. Season and spread on toasted baguette slices." },
+  { id:183, veg:true, name:"Caprese Bites", calories:200,
+    ingredients:["1 cup cherry tomatoes","4 oz fresh mozzarella balls","1/4 cup fresh basil leaves","2 tbsp balsamic glaze"],
+    instructions:"Thread tomato, mozzarella, and basil onto small skewers. Drizzle with balsamic glaze." },
+  { id:184, veg:true, name:"Corn & Avocado Guacamole", calories:220,
+    ingredients:["2 avocados","1/2 cup corn kernels, roasted","1 lime, juiced","2 tbsp fresh cilantro"],
+    instructions:"Mash avocados with lime juice. Fold in corn and cilantro. Season with salt." },
+  { id:185, veg:true, name:"Banana Nice Cream", calories:280,
+    ingredients:["3 frozen bananas","2 tbsp peanut butter","1 tbsp cocoa powder","2 tbsp almond milk"],
+    instructions:"Blend all ingredients until smooth and creamy. Serve immediately or freeze 30 min for firmer texture." },
+  { id:186, veg:true, name:"Berry Chia Pudding", calories:280,
+    ingredients:["1/4 cup chia seeds","1.5 cups coconut milk","1 cup mixed berries","1 tbsp honey"],
+    instructions:"Mix chia seeds and coconut milk. Refrigerate overnight or 4 hours. Top with berries and honey." },
+  { id:187, veg:true, name:"Chocolate Strawberries", calories:220,
+    ingredients:["1 lb strawberries","4 oz dark chocolate, melted","1/4 tsp sea salt","1 tbsp coconut oil"],
+    instructions:"Mix coconut oil into melted chocolate. Dip strawberries and place on parchment. Sprinkle with sea salt." },
+  { id:188, veg:true, name:"Coconut Mango Sorbet", calories:220,
+    ingredients:["2 cups frozen mango chunks","1/2 cup coconut milk","2 tbsp lime juice","1 tbsp honey"],
+    instructions:"Blend all ingredients until smooth. Serve immediately as soft-serve or freeze 2 hours." },
+  { id:189, veg:true, name:"Honey Baked Pears", calories:240,
+    ingredients:["2 pears, halved and cored","2 tbsp honey","1/2 tsp cinnamon","1/4 cup chopped walnuts"],
+    instructions:"Place pear halves in a baking dish. Drizzle with honey and cinnamon. Bake 375°F 20 min. Top with walnuts." },
+  { id:190, veg:true, name:"Melon Mint Granita", calories:120,
+    ingredients:["3 cups watermelon, cubed","1/4 cup fresh mint leaves","2 tbsp lime juice","1 tbsp honey"],
+    instructions:"Blend all ingredients smooth. Pour into a pan and freeze 3 hours, scraping with a fork every hour." },
+  { id:191, veg:true, name:"Peach Cobbler Parfait", calories:320,
+    ingredients:["2 ripe peaches, diced","1 cup Greek yogurt","1/2 cup granola","2 tbsp honey"],
+    instructions:"Layer yogurt, peaches, and granola in a glass. Drizzle honey over and repeat layers." },
+  { id:192, veg:true, name:"Watermelon Lime Pops", calories:120,
+    ingredients:["3 cups cubed watermelon","2 tbsp lime juice","1 tbsp honey","1/4 cup fresh mint"],
+    instructions:"Blend all ingredients smooth. Pour into ice pop molds and freeze 4 hours or overnight." },
+  { id:193, veg:true, name:"Grilled Pineapple Sundae", calories:320,
+    ingredients:["4 pineapple rings","1 cup vanilla ice cream","2 tbsp brown sugar","1/2 tsp cinnamon"],
+    instructions:"Dust pineapple with brown sugar and cinnamon. Grill 3 min per side. Serve with a scoop of ice cream." },
+  { id:194, veg:true, name:"Açaí Bowl", calories:380,
+    ingredients:["2 packets frozen açaí","1 banana","1/2 cup almond milk","1/4 cup granola"],
+    instructions:"Blend açaí, banana, and almond milk until thick. Pour into a bowl and top with granola." },
+  { id:195, veg:true, name:"Chocolate Peanut Butter Smoothie", calories:380,
+    ingredients:["1 frozen banana","2 tbsp peanut butter","1 tbsp cocoa powder","1 cup almond milk"],
+    instructions:"Blend all ingredients until smooth. Pour into a glass and serve immediately." },
+  { id:196, veg:true, name:"Coconut Mango Smoothie Bowl", calories:380,
+    ingredients:["1 cup frozen mango","1/2 cup coconut milk","1 banana","1/4 cup granola"],
+    instructions:"Blend mango, coconut milk, and banana thick. Pour into bowl and top with granola and fresh fruit." },
+  { id:197, veg:true, name:"Green Goddess Smoothie", calories:320,
+    ingredients:["2 cups baby spinach","1 banana","2 tbsp almond butter","1 cup almond milk"],
+    instructions:"Blend all ingredients until smooth and creamy. Serve immediately." },
+  { id:198, veg:true, name:"Peach Ginger Smoothie", calories:280,
+    ingredients:["1.5 cups frozen peaches","1 tsp fresh ginger, grated","1 cup Greek yogurt","1 tbsp honey"],
+    instructions:"Blend all ingredients until smooth. Pour into a glass and serve chilled." },
+  { id:199, veg:true, name:"Pineapple Coconut Smoothie", calories:300,
+    ingredients:["1.5 cups frozen pineapple","1 cup coconut milk","1 banana","1 tbsp lime juice"],
+    instructions:"Blend all ingredients until smooth. Pour into glasses and garnish with a pineapple wedge." },
+  { id:200, veg:true, name:"Strawberry Banana Smoothie", calories:280,
+    ingredients:["1 cup frozen strawberries","1 banana","1/2 cup Greek yogurt","1 tbsp honey"],
+    instructions:"Blend all ingredients until smooth. Pour into a glass and serve." },
+  { id:201, veg:true, name:"Tropical Green Smoothie", calories:280,
+    ingredients:["1 cup frozen mango","2 cups baby spinach","1 banana","1 cup coconut water"],
+    instructions:"Blend all until smooth. The mango and banana mask the spinach flavor completely." },
+  { id:202, veg:true, name:"Watermelon Mint Smoothie", calories:180,
+    ingredients:["3 cups cubed watermelon","1/4 cup fresh mint","1 tbsp lime juice","1/2 cup coconut water"],
+    instructions:"Blend all ingredients with a handful of ice until smooth. Serve immediately." },
+  { id:203, veg:true, name:"Golden Milk Smoothie", calories:280,
+    ingredients:["1 frozen banana","1 tsp turmeric","1 cup coconut milk","1/2 tsp fresh ginger"],
+    instructions:"Blend all ingredients until smooth and creamy. Serve immediately." },
+  { id:204, veg:true, name:"Chia Pudding Parfait", calories:280,
+    ingredients:["1/4 cup chia seeds","1.5 cups almond milk","1 cup mixed berries","1/4 cup granola"],
+    instructions:"Mix chia and almond milk, refrigerate overnight. Layer in a glass with berries and granola." },
+  { id:205, veg:true, name:"Papaya Lime Bowl", calories:280,
+    ingredients:["1 papaya, halved and seeded","1 tbsp lime juice","1 cup coconut yogurt","1/4 cup granola"],
+    instructions:"Fill papaya halves with coconut yogurt. Squeeze lime juice over and top with granola." },
+  { id:206, veg:true, name:"Loaded Sweet Potato", calories:480,
+    ingredients:["2 large sweet potatoes","1/2 cup black beans, heated","1/4 cup shredded cheddar","2 tbsp sour cream"],
+    instructions:"Bake sweet potatoes at 400°F 45 min. Split open and fill with beans, cheese, and sour cream." },
+  { id:207, veg:true, name:"Cauliflower Fried Rice", calories:280,
+    ingredients:["1 head cauliflower, riced","3 eggs","3 tbsp soy sauce","3 green onions, sliced"],
+    instructions:"Stir-fry cauliflower rice until tender. Push aside, scramble eggs. Combine with soy sauce and onions." },
+  { id:208, veg:true, name:"Tomato Feta Baked Eggs", calories:320,
+    ingredients:["6 cherry tomatoes, halved","4 eggs","1/2 cup crumbled feta","2 tbsp olive oil"],
+    instructions:"Sauté tomatoes in oil 3 min. Add feta, crack eggs over the top. Bake 375°F 12 min." },
+  { id:209, veg:true, name:"Zucchini Fritters", calories:280,
+    ingredients:["2 zucchini, grated and squeezed dry","2 eggs","1/4 cup flour","1/4 cup grated parmesan"],
+    instructions:"Mix zucchini, eggs, flour, and parmesan. Form patties and pan-fry in oil 3 min per side." },
+  { id:210, veg:true, name:"Lemon Ricotta Pancakes", calories:380,
+    ingredients:["1 cup ricotta","2 eggs","1 lemon, zested","1/2 cup flour"],
+    instructions:"Mix ricotta, eggs, zest, and flour. Cook small pancakes in a buttered pan 2 min per side." },
+  { id:211, veg:false, name:"Chicken Tikka Bowl", calories:480,
+    ingredients:["1 lb chicken breast, cubed","3 tbsp tikka masala paste","1 cup Greek yogurt","1.5 cups cooked rice"],
+    instructions:"Marinate chicken in yogurt and paste 30 min. Grill or broil. Serve over rice." },
+  { id:212, veg:false, name:"Mango Chicken Bowl", calories:520,
+    ingredients:["2 grilled chicken breasts, sliced","1 cup mango salsa","1.5 cups cooked rice","1/4 cup cilantro"],
+    instructions:"Slice chicken and serve over rice. Top with mango salsa and fresh cilantro." },
+  { id:213, veg:false, name:"Greek Chicken Skewers", calories:360,
+    ingredients:["1 lb chicken breast, cubed","2 tbsp lemon juice","1 tsp dried oregano","2 garlic cloves, minced"],
+    instructions:"Marinate chicken in lemon, oregano, and garlic 30 min. Thread onto skewers and grill 4 min per side." },
+  { id:214, veg:false, name:"Bulgogi Beef Bowl", calories:520,
+    ingredients:["1 lb beef sirloin, thinly sliced","3 tbsp soy sauce","1 tbsp sesame oil","1.5 cups cooked rice"],
+    instructions:"Marinate beef in soy and sesame oil 20 min. Stir-fry hot until caramelized. Serve over rice." },
+  { id:215, veg:false, name:"Tacos al Pastor", calories:480,
+    ingredients:["1 lb pork shoulder, thinly sliced","1 cup pineapple chunks","8 corn tortillas","1/4 cup cilantro"],
+    instructions:"Marinate pork in adobo seasoning. Grill with pineapple until charred. Serve in warmed tortillas with cilantro." },
+  { id:216, veg:false, name:"Vietnamese Beef Salad", calories:420,
+    ingredients:["8 oz flank steak, grilled and sliced thin","4 oz rice noodles, cooked","1/4 cup fresh mint","2 tbsp lime juice"],
+    instructions:"Toss noodles with lime juice and mint. Top with sliced steak and extra herbs." },
+  { id:217, veg:true, name:"Roasted Red Pepper Soup", calories:260,
+    ingredients:["4 roasted red peppers","2 cups vegetable broth","1/2 cup heavy cream","2 garlic cloves"],
+    instructions:"Blend peppers, broth, cream, and garlic until smooth. Heat, season, and serve with crusty bread." },
+  { id:218, veg:true, name:"French Onion Dip Toast", calories:380,
+    ingredients:["4 slices sourdough","2 large onions, caramelized","1/2 cup gruyere, grated","2 tbsp butter"],
+    instructions:"Top sourdough with caramelized onions and gruyere. Broil until cheese melts and bubbles." },
+  { id:219, veg:true, name:"Caprese French Toast", calories:420,
+    ingredients:["4 slices brioche","2 eggs, beaten","4 oz mozzarella, sliced","1 cup cherry tomatoes, halved"],
+    instructions:"Dip brioche in egg and pan-fry golden. Top with mozzarella and broil 2 min. Serve with tomatoes." },
+  { id:220, veg:false, name:"Prosciutto Arugula Pizza", calories:540,
+    ingredients:["1 pre-baked pizza crust","3 oz prosciutto","2 cups arugula","1/4 cup shaved parmesan"],
+    instructions:"Bake crust 8 min at 425°F. Top with prosciutto, arugula, and parmesan with a drizzle of olive oil." },
+  { id:221, veg:true, name:"Avocado Corn Salsa", calories:220,
+    ingredients:["2 avocados, diced","1 cup corn kernels","1 lime, juiced","1/4 cup red onion, diced"],
+    instructions:"Combine all ingredients, season with salt. Serve as a dip or over grilled fish or chicken." },
+  { id:222, veg:true, name:"Mango Salsa", calories:180,
+    ingredients:["2 mangoes, diced","1/4 cup red onion, diced","1/4 cup fresh cilantro","2 tbsp lime juice"],
+    instructions:"Combine all ingredients and season with salt. Rest 10 min for flavors to meld." },
+  { id:223, veg:true, name:"Herbed Cream Cheese Dip", calories:280,
+    ingredients:["8 oz cream cheese, softened","2 tbsp fresh chives","2 tbsp fresh dill","1 tbsp lemon juice"],
+    instructions:"Beat cream cheese with herbs and lemon juice until fluffy. Serve with crackers or veggies." },
+  { id:224, veg:true, name:"Honey Ricotta Crostini", calories:320,
+    ingredients:["1 baguette, sliced and toasted","1/2 cup ricotta","2 tbsp honey","2 tbsp chopped pistachios"],
+    instructions:"Spread ricotta on toasted baguette slices. Drizzle honey and scatter pistachios." },
+  { id:225, veg:false, name:"Tuna Stuffed Avocado", calories:380,
+    ingredients:["2 avocados, halved and pitted","2 cans tuna, drained","2 tbsp mayo","1 tbsp lemon juice"],
+    instructions:"Mix tuna with mayo and lemon juice. Scoop into avocado halves and season with salt." },
+  { id:226, veg:true, name:"Roasted Tomato Soup", calories:240,
+    ingredients:["1 lb cherry tomatoes","2 cups vegetable broth","2 garlic cloves","2 tbsp olive oil"],
+    instructions:"Roast tomatoes and garlic with oil at 400°F 25 min. Blend with broth until smooth." },
+  { id:227, veg:true, name:"Corn & Black Bean Salsa", calories:200,
+    ingredients:["1 can black beans, rinsed","1 cup corn kernels","2 tbsp lime juice","1/4 cup fresh cilantro"],
+    instructions:"Combine all ingredients and season with salt. Serve with chips or as a side salad." },
+  { id:228, veg:true, name:"Sun-Dried Tomato Pasta", calories:480,
+    ingredients:["8 oz pasta, cooked","1/3 cup sun-dried tomatoes, chopped","1/4 cup grated parmesan","3 tbsp olive oil"],
+    instructions:"Toss hot pasta with olive oil, sun-dried tomatoes, and parmesan. Season to taste." },
+  { id:229, veg:true, name:"Ricotta Stuffed Peppers", calories:320,
+    ingredients:["4 bell peppers, halved","1 cup ricotta","1/2 cup marinara sauce","1/4 cup grated parmesan"],
+    instructions:"Fill pepper halves with ricotta. Top with marinara and parmesan. Bake 375°F 25 min." },
+  { id:230, veg:false, name:"Chicken & Veggie Soup", calories:360,
+    ingredients:["2 chicken breasts, shredded","2 cups mixed vegetables, frozen","3 cups chicken broth","1 tsp Italian seasoning"],
+    instructions:"Simmer broth with vegetables and seasoning 10 min. Add chicken, heat through, and season." },
+  { id:231, veg:true, name:"Balsamic Strawberry Toast", calories:280,
+    ingredients:["2 slices sourdough, toasted","1 cup sliced strawberries","2 tbsp balsamic glaze","2 tbsp cream cheese"],
+    instructions:"Spread cream cheese on toast. Top with strawberries and drizzle balsamic glaze over." },
+  { id:232, veg:true, name:"Cottage Cheese Bowl", calories:300,
+    ingredients:["1 cup cottage cheese","1 cup sliced peaches","1 tbsp honey","1/4 cup chopped walnuts"],
+    instructions:"Spoon cottage cheese into a bowl. Top with peach slices, honey, and walnuts." },
+  { id:233, veg:false, name:"Smoked Salmon Egg Cups", calories:280,
+    ingredients:["4 eggs","2 oz smoked salmon, flaked","2 tbsp cream cheese","1 tbsp fresh dill"],
+    instructions:"Whisk eggs and pour into greased muffin cups. Top with salmon, cream cheese, and dill. Bake 375°F 15 min." },
+  { id:234, veg:true, name:"Avocado Lime Soup", calories:250,
+    ingredients:["2 avocados","2 cups vegetable broth, cold","2 tbsp lime juice","1/4 cup fresh cilantro"],
+    instructions:"Blend avocados with cold broth, lime juice, and cilantro until silky. Chill and serve cold." },
+  { id:235, veg:true, name:"Watermelon Basil Salad", calories:180,
+    ingredients:["4 cups cubed watermelon","1/2 cup fresh basil, torn","1/4 cup crumbled feta","1 tbsp olive oil"],
+    instructions:"Arrange watermelon on a platter. Scatter basil and feta, drizzle olive oil, and serve immediately." },
+  { id:236, veg:true, name:"Cucumber Avocado Rolls", calories:220,
+    ingredients:["2 cucumbers, sliced into rounds","1 avocado, mashed","1 tbsp lemon juice","1 tsp sesame seeds"],
+    instructions:"Mix avocado with lemon juice. Spoon onto cucumber rounds and top with sesame seeds." },
+  { id:237, veg:false, name:"Crab Avocado Cups", calories:280,
+    ingredients:["2 avocados, halved","4 oz lump crab meat","1 tbsp lime juice","1 tbsp fresh cilantro"],
+    instructions:"Mix crab with lime juice and cilantro. Season and spoon into avocado halves." },
+  { id:238, veg:true, name:"Raspberry Yogurt Bark", calories:200,
+    ingredients:["2 cups Greek yogurt","2 tbsp honey","1 cup fresh raspberries","1/4 cup dark chocolate chips"],
+    instructions:"Stir honey into yogurt and spread on a lined sheet. Top with raspberries and chocolate chips. Freeze 3 hours." },
+  { id:239, veg:true, name:"Mango Coconut Chia Pudding", calories:300,
+    ingredients:["1/4 cup chia seeds","1.5 cups coconut milk","1 mango, diced","1 tbsp honey"],
+    instructions:"Mix chia and coconut milk, refrigerate overnight. Top with mango and honey to serve." },
+  { id:240, veg:true, name:"Lemon Blueberry Yogurt", calories:250,
+    ingredients:["1.5 cups Greek yogurt","1 cup fresh blueberries","1 lemon, zested","2 tbsp honey"],
+    instructions:"Layer yogurt with blueberries in a bowl. Top with lemon zest and drizzle honey over." },
+  { id:241, veg:true, name:"Nectarine Arugula Salad", calories:220,
+    ingredients:["3 cups arugula","2 nectarines, sliced","1/4 cup crumbled goat cheese","2 tbsp balsamic vinaigrette"],
+    instructions:"Toss arugula with vinaigrette. Top with nectarine slices and goat cheese." },
+  { id:242, veg:false, name:"Teriyaki Shrimp Skewers", calories:300,
+    ingredients:["1 lb large shrimp, peeled","3 tbsp teriyaki sauce","1 tbsp sesame seeds","2 green onions, sliced"],
+    instructions:"Thread shrimp onto skewers. Brush with teriyaki and grill 2 min per side. Top with seeds and onion." },
+  { id:243, veg:true, name:"Avocado Caprese", calories:320,
+    ingredients:["1 avocado, sliced","4 oz fresh mozzarella, sliced","1 tomato, sliced","2 tbsp balsamic glaze"],
+    instructions:"Alternate avocado, mozzarella, and tomato on a plate. Drizzle balsamic glaze over all." },
+  { id:244, veg:true, name:"Roasted Beet & Orange Salad", calories:240,
+    ingredients:["3 beets, roasted and sliced","2 oranges, segmented","1/4 cup crumbled goat cheese","2 tbsp olive oil"],
+    instructions:"Arrange beets and orange segments. Scatter goat cheese and drizzle olive oil." },
+  { id:245, veg:false, name:"Chicken Avocado Wrap", calories:490,
+    ingredients:["1 grilled chicken breast, sliced","1 large tortilla","1 avocado, sliced","2 cups mixed greens"],
+    instructions:"Layer greens, avocado, and chicken on tortilla. Roll tightly and slice in half." },
+  { id:246, veg:true, name:"Spinach Pesto Toast", calories:340,
+    ingredients:["2 slices sourdough, toasted","3 tbsp basil pesto","1 cup baby spinach","1/4 cup cherry tomatoes, halved"],
+    instructions:"Spread pesto on toast. Top with spinach and tomatoes and serve." },
+  { id:247, veg:false, name:"Smoked Trout Salad", calories:320,
+    ingredients:["4 oz smoked trout, flaked","4 cups mixed greens","1 lemon, juiced","2 tbsp olive oil"],
+    instructions:"Toss greens with olive oil and lemon. Top with smoked trout." },
+  { id:248, veg:true, name:"Peach Feta Flatbread", calories:440,
+    ingredients:["1 pre-baked flatbread","2 peaches, sliced","1/2 cup crumbled feta","2 tbsp honey"],
+    instructions:"Top flatbread with peach slices and feta. Bake 400°F 10 min, then drizzle with honey." },
+  { id:249, veg:false, name:"Prosciutto Wrapped Asparagus", calories:220,
+    ingredients:["1 lb asparagus, trimmed","8 slices prosciutto","1 tbsp olive oil","1 tbsp lemon juice"],
+    instructions:"Wrap 3–4 asparagus spears in prosciutto. Brush with oil and grill or roast 400°F 12 min." },
+  { id:250, veg:true, name:"Raspberry Lemon Smoothie Bowl", calories:280,
+    ingredients:["1.5 cups frozen raspberries","1 banana","1 lemon, juiced","1/4 cup granola"],
+    instructions:"Blend raspberries, banana, and lemon juice thick. Pour into a bowl and top with granola." }
 ];
 
-// ============================================================
-//  STATE — persisted in localStorage
-// ============================================================
-const STORAGE_KEY = "summerBites.ratings";
-let ratings = loadRatings();
+const TOTAL = RECIPES.length;
+const STORAGE_KEY = "summerBites.v2";
+let state = loadState();
 let currentRecipe = null;
+let activeFilter = "all";
 
-function loadRatings() {
+function loadState() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : {};
+    return raw ? JSON.parse(raw) : { ratings: {}, favorites: {} };
   } catch (e) {
-    return {};
+    return { ratings: {}, favorites: {} };
   }
 }
 
-function saveRatings() {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(ratings));
-  } catch (e) {
-    // localStorage unavailable — app still works for this session
-  }
+function saveState() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
 }
 
-// ============================================================
-//  RECIPE SELECTION
-// ============================================================
+// ── CLOCK ──
+function updateClock() {
+  const now = new Date();
+  const date = now.toLocaleDateString("en-US", { weekday:"short", month:"short", day:"numeric" });
+  const time = now.toLocaleTimeString("en-US", { hour:"numeric", minute:"2-digit" });
+  document.getElementById("datetimePill").textContent = `${date} · ${time}`;
+}
+updateClock();
+setInterval(updateClock, 1000);
+
+// ── RECIPE SELECTION ──
+function filteredPool() {
+  if (activeFilter === "veg") return RECIPES.filter(r => r.veg);
+  if (activeFilter === "meat") return RECIPES.filter(r => !r.veg);
+  return RECIPES;
+}
+
 function pickNextRecipe() {
-  // Prefer unrated recipes; fall back to all if everything is rated
-  const unrated = RECIPES.filter(r => !(r.id in ratings));
-  const pool = unrated.length > 0 ? unrated : RECIPES;
-
-  // Avoid showing the same recipe twice in a row if possible
-  let choice;
-  let attempts = 0;
+  const pool = filteredPool();
+  if (!pool.length) return;
+  const unrated = pool.filter(r => !(r.id in state.ratings));
+  const source = unrated.length > 0 ? unrated : pool;
+  let choice, attempts = 0;
   do {
-    choice = pool[Math.floor(Math.random() * pool.length)];
+    choice = source[Math.floor(Math.random() * source.length)];
     attempts++;
-  } while (currentRecipe && choice.id === currentRecipe.id && pool.length > 1 && attempts < 10);
-
+  } while (currentRecipe && choice.id === currentRecipe.id && source.length > 1 && attempts < 10);
   currentRecipe = choice;
   renderRecipe(choice);
+  updateFavoriteBtn();
 }
 
 function showSpecificRecipe(id) {
   const recipe = RECIPES.find(r => r.id === id);
-  if (recipe) {
-    currentRecipe = recipe;
-    renderRecipe(recipe);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  if (recipe) { currentRecipe = recipe; renderRecipe(recipe); updateFavoriteBtn(); window.scrollTo({ top:0, behavior:"smooth" }); }
 }
 
-// ============================================================
-//  RENDERING
-// ============================================================
+// ── RENDER ──
 function renderRecipe(r) {
-  const card = document.getElementById("recipeCard");
-  const ratingStatus = ratings[r.id];
-  const statusLabel =
-    ratingStatus === "liked" ? `<span class="badge" style="background:#e7f0e2;color:#3f5d33;">♥ You liked this</span>` :
-    ratingStatus === "disliked" ? `<span class="badge" style="background:#f5e1e1;color:#8a3f3f;">✕ You passed on this</span>` : "";
+  const ratingStatus = state.ratings[r.id];
+  const statusBadge =
+    ratingStatus === "liked" ? `<span class="badge" style="background:#e7f0e2;color:#3f5d33;">♥ Liked</span>` :
+    ratingStatus === "disliked" ? `<span class="badge" style="background:#f5e1e1;color:#8a3f3f;">✕ Passed</span>` : "";
+  const favBadge = state.favorites[r.id]
+    ? `<span class="badge" style="background:#fef3d0;color:#8a6010;">⭐ Favorited</span>` : "";
+  const vegBadge = r.veg
+    ? `<span class="badge" style="background:#e7f0e2;color:#3f5d33;">🥗 Vegetarian</span>` : "";
 
-  card.innerHTML = `
+  document.getElementById("recipeCard").innerHTML = `
     <h2 class="recipe-name">${r.name}</h2>
     <div class="badges">
       <span class="badge cal">🔥 ${r.calories} cal</span>
       <span class="badge ing">🧺 ${r.ingredients.length} ingredient${r.ingredients.length === 1 ? "" : "s"}</span>
-      ${statusLabel}
+      ${vegBadge}${statusBadge}${favBadge}
     </div>
-
     <div class="section">
       <span class="section-label">Shopping List</span>
-      <ul class="ingredients">
-        ${r.ingredients.map(i => `<li>${i}</li>`).join("")}
-      </ul>
+      <ul class="ingredients">${r.ingredients.map(i => `<li>${i}</li>`).join("")}</ul>
     </div>
-
     <div class="section">
       <span class="section-label">How to Make It</span>
       <p class="instructions">${r.instructions}</p>
-    </div>
-  `;
+    </div>`;
+}
+
+function updateFavoriteBtn() {
+  const btn = document.getElementById("favoriteBtn");
+  if (!currentRecipe) return;
+  if (state.favorites[currentRecipe.id]) {
+    btn.classList.add("is-favorited");
+    btn.querySelector(".btn-label").textContent = "Favorited!";
+  } else {
+    btn.classList.remove("is-favorited");
+    btn.querySelector(".btn-label").textContent = "Favorite";
+  }
 }
 
 function renderLists() {
-  const likedIds = Object.keys(ratings).filter(id => ratings[id] === "liked").map(Number);
-  const dislikedIds = Object.keys(ratings).filter(id => ratings[id] === "disliked").map(Number);
+  const likedIds = Object.keys(state.ratings).filter(id => state.ratings[id] === "liked").map(Number);
+  const dislikedIds = Object.keys(state.ratings).filter(id => state.ratings[id] === "disliked").map(Number);
+  const favIds = Object.keys(state.favorites).filter(id => state.favorites[id]).map(Number);
 
-  const likedList = document.getElementById("likedList");
-  const dislikedList = document.getElementById("dislikedList");
+  function makeItem(id) {
+    const r = RECIPES.find(x => x.id === id);
+    if (!r) return "";
+    return `<li data-id="${r.id}"><span>${r.name}</span><span class="cal-text">${r.calories} cal</span></li>`;
+  }
 
-  likedList.innerHTML = likedIds.length === 0
-    ? `<div class="empty-state">No favorites yet — tap 👍 Yum to save meals you love.</div>`
-    : likedIds.map(id => {
-        const r = RECIPES.find(x => x.id === id);
-        return `<li data-id="${r.id}"><span>${r.name}</span><span class="cal-text">${r.calories} cal</span></li>`;
-      }).join("");
+  document.getElementById("likedList").innerHTML = likedIds.length
+    ? likedIds.map(makeItem).join("")
+    : `<div class="empty-state">No favorites yet — tap 👍 Yum to save meals you love.</div>`;
 
-  dislikedList.innerHTML = dislikedIds.length === 0
-    ? `<div class="empty-state">Nothing here yet — tap 👎 to skip meals that aren't for you.</div>`
-    : dislikedIds.map(id => {
-        const r = RECIPES.find(x => x.id === id);
-        return `<li data-id="${r.id}"><span>${r.name}</span><span class="cal-text">${r.calories} cal</span></li>`;
-      }).join("");
+  document.getElementById("dislikedList").innerHTML = dislikedIds.length
+    ? dislikedIds.map(makeItem).join("")
+    : `<div class="empty-state">Nothing here yet — tap 👎 to skip meals that aren't for you.</div>`;
 
-  // wire up click-to-view
+  document.getElementById("favoritesList").innerHTML = favIds.length
+    ? favIds.map(makeItem).join("")
+    : `<div class="empty-state">Nothing starred yet — tap ⭐ Favorite to save the best ones.</div>`;
+
   document.querySelectorAll(".rated-list li").forEach(li => {
     li.addEventListener("click", () => showSpecificRecipe(Number(li.dataset.id)));
   });
 
   document.getElementById("likedCount").textContent = likedIds.length;
   document.getElementById("dislikedCount").textContent = dislikedIds.length;
+  document.getElementById("favoritesCount").textContent = favIds.length;
 
-  const rated = Object.keys(ratings).length;
-  document.getElementById("progress").textContent = `${rated} of 50 tried`;
+  const rated = Object.keys(state.ratings).length;
+  document.getElementById("progress").textContent = `${rated} of ${TOTAL} tried`;
 }
 
-// ============================================================
-//  EVENT HANDLERS
-// ============================================================
+// ── ACTIONS ──
 function rateCurrent(rating) {
   if (!currentRecipe) return;
-  ratings[currentRecipe.id] = rating;
-  saveRatings();
+  state.ratings[currentRecipe.id] = rating;
+  saveState();
   renderLists();
   pickNextRecipe();
 }
 
+function toggleFavorite() {
+  if (!currentRecipe) return;
+  state.favorites[currentRecipe.id] = !state.favorites[currentRecipe.id];
+  if (!state.favorites[currentRecipe.id]) delete state.favorites[currentRecipe.id];
+  saveState();
+  renderLists();
+  updateFavoriteBtn();
+  renderRecipe(currentRecipe);
+}
+
+// ── EVENT LISTENERS ──
 document.getElementById("likeBtn").addEventListener("click", () => rateCurrent("liked"));
 document.getElementById("dislikeBtn").addEventListener("click", () => rateCurrent("disliked"));
 document.getElementById("skipBtn").addEventListener("click", () => pickNextRecipe());
+document.getElementById("favoriteBtn").addEventListener("click", toggleFavorite);
 
 document.getElementById("resetBtn").addEventListener("click", () => {
-  if (confirm("Clear all your ratings and start fresh?")) {
-    ratings = {};
-    saveRatings();
+  if (confirm("Clear all ratings and favorites and start fresh?")) {
+    state = { ratings: {}, favorites: {} };
+    saveState();
     renderLists();
     pickNextRecipe();
   }
 });
 
-// Tab switching
 document.querySelectorAll(".tab").forEach(tab => {
   tab.addEventListener("click", () => {
     document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
@@ -790,20 +1218,26 @@ document.querySelectorAll(".tab").forEach(tab => {
   });
 });
 
-// Keyboard shortcuts: ← dislike, → like, space skip
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    activeFilter = btn.dataset.filter;
+    pickNextRecipe();
+  });
+});
+
 document.addEventListener("keydown", (e) => {
   if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
   if (e.key === "ArrowRight") { e.preventDefault(); rateCurrent("liked"); }
   else if (e.key === "ArrowLeft") { e.preventDefault(); rateCurrent("disliked"); }
   else if (e.key === " ") { e.preventDefault(); pickNextRecipe(); }
+  else if (e.key === "f" || e.key === "F") { toggleFavorite(); }
 });
 
-// ============================================================
-//  INITIAL RENDER
-// ============================================================
+// ── INIT ──
 pickNextRecipe();
 renderLists();
 </script>
-
 </body>
 </html>
